@@ -1049,17 +1049,17 @@ body._active,body._popup-active {
     opacity: 0
 }
 
+.anim-section {
+    opacity: 0;
+    transition: opacity .4s ease
+}
+
 .anim-element,.anim-fade-in,.anim-fade-top {
     opacity: 0
 }
 
 .anim-element.anim-text {
     opacity: 1
-}
-
-.anim-section {
-    opacity: 0;
-    transition: opacity .4s ease
 }
 
 .main-title {

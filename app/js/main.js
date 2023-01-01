@@ -6,20 +6,6 @@ const body = document.querySelector('body'),
 	burger = document.querySelector('.header__burger'),
 	header = document.querySelector('.header');
 
-
-body.addEventListener('click', function (event) {
-
-	function $(elem) {
-		return event.target.closest(elem)
-	}
-
-	// =-=-=-=-=-=-=-=-=-=- <Бургер в шапке> -=-=-=-=-=-=-=-=-=-=-
-	//if($('.check-nft__slide--body')) event.preventDefault()
-	// =-=-=-=-=-=-=-=-=-=- </Бургер в шапке> -=-=-=-=-=-=-=-=-=-=-
-
-})
-
-
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
 let checkNftSlider = new Swiper('.check-nft__slider', {
@@ -77,39 +63,10 @@ window.onresize = resize;
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </resize> -=-=-=-=-=-=-=-=-=-=-=-=
 
-// =-=-=-=-=-=-=-=-=-=-=-=- <Анимации> -=-=-=-=-=-=-=-=-=-=-=-=
+// =-=-=-=-=-=-=-=-=-=-=-=- <Animation> -=-=-=-=-=-=-=-=-=-=-=-=
 
 gsap.registerPlugin(ScrollTrigger)
 gsap.registerPlugin(TimelineMax)
-
-/* gsap.to(header, {
-	startAt: {
-		y: -100,
-		opacity: 0,
-	},
-	y: 0,
-	opacity: 1,
-	duration: 1,
-	scrollTrigger: {
-		trigger: header,
-	}
-}) */
-
-/* function splitText(section, tl) {
-	const animSection = document.querySelectorAll('.anim-section');
-	animSection.forEach(animSection => {
-
-		const animText = animSection.querySelectorAll('.anim-text');
-		
-		animText.forEach((animText, index) => {
-			
-			
-		})
-
-	})
-} */
-
-//splitText();
 
 let tl = gsap.timeline();
 const animSection = document.querySelectorAll('.anim-section');
@@ -267,48 +224,11 @@ gsap.to(header, {
 	delay: 0.2
 })
 
-/* document.querySelectorAll('.anim-fade-in').forEach(animFadeIn => {
-	gsap.to(animFadeIn, {
-		opacity: 1,
-		duration: (Number(animFadeIn.dataset.duration)) ? Number(animFadeIn.dataset.duration) : 1.5,
-		delay: Number(animFadeIn.dataset.delay),
-		scrollTrigger: {
-			trigger: animFadeIn.closest('.anim-section'),
-			//toggleActions: 'restart reverse play none'
-		},
-		
-	})
-})
-
-document.querySelectorAll('.anim-fade-top').forEach(animFadeTop => {
-	gsap.to(animFadeTop, {
-		startAt: {
-			y: 50,
-		},
-		y: 0,
-		opacity: 1,
-		duration: (Number(animFadeTop.dataset.duration)) ? Number(animFadeTop.dataset.duration) : 1.5,
-		delay: Number(animFadeTop.dataset.delay),
-		scrollTrigger: {
-			trigger: animFadeTop.closest('.anim-section'),
-			start: 'top 30%',
-			markers: true,
-			//toggleActions: 'restart reverse play none'
-		}
-	})
-}) */
-
-// =-=-=-=-=-=-=-=-=-=-=-=- </Анимации> -=-=-=-=-=-=-=-=-=-=-=-=
+// =-=-=-=-=-=-=-=-=-=-=-=- </Animation> -=-=-=-=-=-=-=-=-=-=-=-=
 
 
-/*
-<div class="timer" data-timer-year="" data-timer-month="" data-timer-day="" data-timer-hour="" data-timer-minute="">
-	<span class="timer-days"><span class="timer-days-value"></span></d>
-	<span class="timer-hours"><span class="timer-hours-value"></span></span>
-	<span class="timer-minutes"><span class="timer-minutes-value"></span></span>
-	<span class="timer-seconds"><span class="timer-seconds-value"></span></span>
-</div>
-*/
+
+// =-=-=-=-=-=-=-=-=-=-=-=- <Timer> -=-=-=-=-=-=-=-=-=-=-=-=
 
 function timer() {
 	const timerElems = document.querySelectorAll('.timer');
@@ -347,3 +267,5 @@ timer();
 setInterval(() => {
 	timer();
 },1000)
+
+// =-=-=-=-=-=-=-=-=-=-=-=- </Timer> -=-=-=-=-=-=-=-=-=-=-=-=

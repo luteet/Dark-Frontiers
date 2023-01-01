@@ -16,8 +16,6 @@ body {
 
     background: var(--dark);
 
-    //padding-right: var(--popup-padding);
-
     &._active {
         overflow: hidden;
     }
@@ -71,7 +69,6 @@ body {
     margin: 0 auto;
     max-width: #{$container}px;
     &._min {
-        /* max-width: #{$containerMin}px; */
 		@media (min-width: 1280px) {
 			padding: 0 160px;
 		}
@@ -208,15 +205,15 @@ body {
     }
 }
 
-
-/* .anim-text {
-	overflow: hidden;
-} */
-
 .anim-text-word {
 	display: inline-block;
 	padding-right: 7px;
 	opacity: 0;
+}
+
+.anim-section {
+    opacity: 0;
+    transition: opacity .4s ease;
 }
 
 .anim-fade-in, .anim-fade-top {
@@ -230,7 +227,4 @@ body {
     }
 }
 
-.anim-section {
-    opacity: 0;
-    transition: opacity .4s ease;
-}
+
