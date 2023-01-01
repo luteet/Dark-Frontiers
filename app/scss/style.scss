@@ -1,0 +1,19 @@
+@import 'mixin';
+@import 'null';
+@import 'libs';
+@import 'vars';
+@import 'global';
+@import 'font';
+
+@import 'main-sections/header';
+
+
+@import 'pages/index/intro';
+@import 'pages/index/dao-maker';
+@import 'pages/index/what-is';
+@import 'pages/index/our-nft';
+@import 'pages/index/nft-section';
+@import 'pages/index/subscribe';
+
+
+@import 'main-sections/footer';

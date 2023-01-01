@@ -1,0 +1,36 @@
+
+
+$containerPadding: 80;
+
+$container: 1280 + ($containerPadding * 2);
+$containerMin: 1121 + ($containerPadding * 2);
+$containerLarge: 1440 + ($containerPadding * 2);
+
+:root {
+    --title-font: 'Mont';
+    --main-font: 'Mont';
+    
+    --accent: #0047FF;
+    --accent-light: #346eff;
+    --accent-dark: #0038c7;
+
+    --dark: #090A1A;
+
+    --white: #FFF;
+    --black: #000;
+    --red: #FF0000;
+
+    --container-padding: 80px;
+}
+
+@font-face {
+    @include font-include('Mont', 400, swap, normal, 'Mont-Regular');
+}
+
+@font-face {
+    @include font-include('Mont', 800, swap, normal, 'Mont-Bold');
+}
+
+@font-face {
+    @include font-include('Mont', 900, swap, normal, 'Mont-Heavy');
+}
