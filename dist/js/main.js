@@ -6,7 +6,7 @@ const body = document.querySelector('body'),
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
-let checkNftSlider = new Swiper('.check-nft__slider', {
+let checkNftSlider/*  = new Swiper('.check-nft__slider', {
 
 	spaceBetween: 32,
 	slidesPerView: 1,
@@ -14,11 +14,11 @@ let checkNftSlider = new Swiper('.check-nft__slider', {
 	speed: 500,
 	allowTouchMove: false,
 
-	/* autoplay: {
+	autoplay: {
 		delay: 0,
 		disableOnInteraction: false,
 		pauseOnMouseEnter: true,
-	}, */
+	},
 
 	//enabled: false,
 
@@ -45,9 +45,9 @@ let checkNftSlider = new Swiper('.check-nft__slider', {
 			spaceBetween: 52,
 		},
 	}
-});
+}); */
 
-checkNftSlider.slidePrev(0)
+//checkNftSlider.slidePrev(0)
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -203,6 +203,34 @@ animSection.forEach(animSection => {
 				duration: duration,
 				delay: delay,
 			}, (index == 0) ? false : "-=1");
+
+		} else if(animArrayElement['element'].classList.contains('anim-slider')) {
+			
+			tl.to(animArrayElement['element'], {
+				opacity: 1,
+				startAt: {
+					opacity: 0,
+				},
+				duration: duration,
+				delay: delay,
+				/* onStart: function () {
+					
+				} */
+			}, (index == 0) ? false : "-=1");
+
+			gsap.to(animArrayElement['element'], {
+				x: (500 > window.innerHeight / 3) ? 500 : window.innerHeight / 3,
+				/* startAt: {
+					x: -150,
+				}, */
+				scrollTrigger: {
+					trigger: animSection,
+					//markers: true,
+					start: 'top center',
+					end: 'bottom -100px',
+					scrub: true,
+				}
+			})
 
 		} else {
 			tl.to(animArrayElement['element'], {

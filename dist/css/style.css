@@ -10,17 +10,12 @@ progress,sub,sup {
     vertical-align: baseline
 }
 
-*,:after,:before,[type=checkbox],[type=radio],legend {
+*,.swiper-lazy-preloader,:after,:before,[type=checkbox],[type=radio],legend {
     box-sizing: border-box
 }
 
 .swiper,ul li {
     list-style: none
-}
-
-.bg-img,.check-nft__slide {
-    -moz-user-select: none;
-    -ms-user-select: none
 }
 
 * {
@@ -255,10 +250,6 @@ summary {
     box-sizing: content-box
 }
 
-.swiper-button-lock,.swiper-pagination-lock {
-    display: none
-}
-
 .swiper-android .swiper-slide,.swiper-wrapper {
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0)
@@ -478,6 +469,10 @@ summary {
     content: "next"
 }
 
+.swiper-button-lock {
+    display: none
+}
+
 .swiper-pagination {
     position: absolute;
     text-align: center;
@@ -601,6 +596,10 @@ button.swiper-pagination-bullet {
     transition: .2s transform,.2s top
 }
 
+.swiper-pagination-lock,.swiper-scrollbar-lock {
+    display: none
+}
+
 .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0 var(--swiper-pagination-bullet-horizontal-gap,4px)
 }
@@ -696,10 +695,6 @@ button.swiper-pagination-bullet {
     top: 0
 }
 
-.swiper-scrollbar-lock {
-    display: none
-}
-
 .swiper-zoom-container {
     width: 100%;
     height: 100%;
@@ -727,7 +722,6 @@ button.swiper-pagination-bullet {
     z-index: 10;
     -webkit-transform-origin: 50%;
     transform-origin: 50%;
-    box-sizing: border-box;
     border: 4px solid;
     border-radius: 50%;
     border-top-color: transparent
@@ -977,6 +971,8 @@ body._active,body._popup-active {
     width: 100%;
     height: 100%;
     -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     -o-object-fit: cover;
     object-fit: cover;
@@ -1523,13 +1519,13 @@ body._active,body._popup-active {
     transition: opacity 1s ease
 }
 
-.check-nft__block._animated-slider>*,.check-nft__slide.swiper-slide-active .check-nft__slide--body::before,.check-nft__slide.swiper-slide-duplicate-active .check-nft__slide--body::before {
+.check-nft__block._animated-slider>*,.check-nft__slide:nth-child(even) .check-nft__slide--body::before {
     opacity: 1
 }
 
 .check-nft__slider {
     padding: 44px 10px 0;
-    overflow: visible;
+    overflow: hidden;
     position: relative
 }
 
@@ -1538,11 +1534,9 @@ body._active,body._popup-active {
     position: absolute;
     top: 0;
     width: 25%;
-    height: 100%;
+    height: calc(100% + 30px);
     pointer-events: none;
-    z-index: 2;
-    -webkit-filter: blur(5px);
-    filter: blur(5px)
+    z-index: 3
 }
 
 .check-nft__slider::before {
@@ -1555,15 +1549,26 @@ body._active,body._popup-active {
     background: linear-gradient(-90deg,#090A1A 0,rgba(9,10,26,0) 100%)
 }
 
+.check-nft__slider--list {
+    display: flex;
+    justify-content: center
+}
+
+.check-nft__slider--slide {
+    flex: 0 0 25%;
+    min-width: 453px;
+    padding: 0 25px
+}
+
 .check-nft__slide {
-    padding-top: 75px;
-    transition: padding-top .4s ease;
     -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none
 }
 
-.check-nft__slide.swiper-slide-active,.check-nft__slide.swiper-slide-duplicate-active {
-    padding-top: 0
+.check-nft__slide:nth-child(even) {
+    padding-top: 75px
 }
 
 .check-nft__slide--body {
@@ -1594,7 +1599,7 @@ body._active,body._popup-active {
 
 .check-nft__slide--image {
     width: 100%;
-    aspect-ratio: 10/8;
+    padding-top: 55%;
     position: relative;
     max-width: 500px;
     margin-bottom: 25px
@@ -2194,6 +2199,12 @@ body._active,body._popup-active {
     width: calc(80% - 50px)
 }
 
+@media (min-width:400px) {
+    .check-nft__slider {
+        padding-right: 500px
+    }
+}
+
 @media (min-width:550px) {
     .visible-on-mob {
         display: none
@@ -2348,7 +2359,7 @@ body._active,body._popup-active {
     }
 
     .check-nft__slider {
-        padding: 44px 30px 0
+        padding: 44px 0 0
     }
 
     .check-nft__slide--name {
@@ -2485,7 +2496,7 @@ body._active,body._popup-active {
     }
 
     .check-nft__slider {
-        padding: 44px 95px 0
+        padding: 44px 0 0
     }
 
     .nft-section {
@@ -2605,7 +2616,7 @@ body._active,body._popup-active {
     }
 
     .check-nft__slider {
-        padding: 61px 150px 0
+        padding: 61px 0 0
     }
 
     .nft-section {
@@ -2765,23 +2776,7 @@ body._active,body._popup-active {
     }
 
     .check-nft__slider {
-        padding: 86px 30px 0
-    }
-
-    .check-nft__slide.swiper-slide-active .check-nft__slide--body::before,.check-nft__slide.swiper-slide-duplicate-active .check-nft__slide--body::before {
-        opacity: 0
-    }
-
-    .check-nft__slide.swiper-slide-duplicate-next .check-nft__slide--body::before,.check-nft__slide.swiper-slide-duplicate-prev .check-nft__slide--body::before,.check-nft__slide.swiper-slide-next .check-nft__slide--body::before,.check-nft__slide.swiper-slide-prev .check-nft__slide--body::before {
-        opacity: 1
-    }
-
-    .check-nft__slide.swiper-slide-duplicate-next,.check-nft__slide.swiper-slide-duplicate-prev,.check-nft__slide.swiper-slide-next,.check-nft__slide.swiper-slide-prev {
-        padding-top: 0
-    }
-
-    .check-nft__slide.swiper-slide-active,.check-nft__slide.swiper-slide-duplicate-active {
-        padding-top: 75px
+        padding: 86px 0 0
     }
 
     .check-nft__slide--name {
@@ -2909,7 +2904,7 @@ body._active,body._popup-active {
     }
 
     .check-nft__slider {
-        padding: 100px 15px 0
+        padding: 100px 0 0
     }
 
     .nft-section {
@@ -3325,7 +3320,7 @@ body._active,body._popup-active {
 
 @media (min-width:1600px) {
     .check-nft__slider {
-        padding: 100px 85px 0
+        padding: 100px 0 0
     }
 }
 
