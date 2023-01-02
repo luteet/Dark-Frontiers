@@ -42,6 +42,17 @@
         }
     }
 
+    &__block {
+        &._has-slider > * {
+            opacity: 0;
+            transition: opacity 1s ease;
+            
+        }
+        &._animated-slider > * {
+            opacity: 1;
+        }
+    }
+
     // .check-nft__slider
 
     &__slider {
@@ -97,7 +108,7 @@
         // .check-nft__slider--list
 
         &--list {
-            transition-timing-function: linear !important;
+            //transition-timing-function: linear !important;
         }
 
         // .check-nft__slider--slide

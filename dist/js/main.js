@@ -11,17 +11,22 @@ let checkNftSlider = new Swiper('.check-nft__slider', {
 	spaceBetween: 32,
 	slidesPerView: 1,
 	centeredSlides: true,
-	speed: 5000,
+	speed: 500,
+	allowTouchMove: false,
 
-	autoplay: {
+	/* autoplay: {
 		delay: 0,
 		disableOnInteraction: false,
 		pauseOnMouseEnter: true,
-	},
+	}, */
+
+	//enabled: false,
+
+	//noSwiping: true,
 
 	loop: true,
 	loopAdditionalSlides: 2,
-	freeMode: true,
+	//freeMode: true,
 	
 	breakpoints: {
 		550: {
@@ -41,6 +46,8 @@ let checkNftSlider = new Swiper('.check-nft__slider', {
 		},
 	}
 });
+
+checkNftSlider.slidePrev(0)
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -154,6 +161,20 @@ animSection.forEach(animSection => {
 				},
 				duration: duration,
 				delay: delay,
+				onStart: function() {
+					
+					if(animArrayElement['element'].classList.contains('_has-slider')) {
+						if(checkNftSlider) {
+							checkNftSlider.slideNext(2500)
+						}
+
+						setTimeout(() => {
+							animArrayElement['element'].classList.add('_animated-slider');
+						},200)
+						
+					}
+					
+				}
 			}, (index == 0) ? false : "-=1");
 
 		} else if(animArrayElement['element'].classList.contains('anim-zoom-bottom')) {
@@ -190,6 +211,8 @@ animSection.forEach(animSection => {
 				delay: delay,
 			}, (index == 0) ? false : "-=1");
 		}
+
+		
 		
 	})
 
