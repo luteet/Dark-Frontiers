@@ -2,8 +2,6 @@
 
 const body = document.querySelector('body'),
 	html = document.querySelector('html'),
-	menu = document.querySelectorAll('.header__burger, .header__nav, body'),
-	burger = document.querySelector('.header__burger'),
 	header = document.querySelector('.header');
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=

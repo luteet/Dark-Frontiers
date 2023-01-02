@@ -8,36 +8,12 @@
 
     margin: 0;
 
-    /* @media (min-width: 701px) {
-        font-size: 5.25rem;
-    } */
-
     @media (min-width: 888px) {
         font-size: 5rem;
     }
 
     @media (min-width: 1201px) {
         font-size: 6.25rem;
-    }
-}
-
-.title {
-    
-    font-family: var(--title-font);
-    font-weight: 700;
-
-    font-size: 1.125rem;
-
-    @include _768 {
-        font-size: 1.5rem;
-    }
-
-    @include _992 {
-        font-size: 1.875rem;
-    }
-    
-    &._min {
-
     }
 }
 
