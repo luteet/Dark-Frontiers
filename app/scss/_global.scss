@@ -36,35 +36,35 @@ body {
     flex: 1 0 auto;
 
     padding-bottom: 85px;
-    @media (min-width: 700px) {
+    @media (min-width: 555px) {
         padding-bottom: 65px;
     }
-    @media (min-width: 888px) {
+    @media (min-width: 705px) {
         padding-bottom: 80px;
     }
-    @media (min-width: 980px) {
+    @media (min-width: 893px) {
         padding-bottom: 75px;
     }
-    @media (min-width: 1100px) {
+    @media (min-width: 985px) {
         padding-bottom: 90px;
     }
-    @media (min-width: 1280px) {
+    @media (min-width: 1205px) {
         padding-bottom: 105px;
     }
-    @media (min-width: 1360px) {
+    @media (min-width: 1285px) {
         padding-bottom: 120px;
     }
 }
 
 .container {
     padding: 0 30px;
-	@media (min-width: 888px) {
+	@media (min-width: 705px) {
 		padding: 0 var(--container-padding);
 	}
     margin: 0 auto;
     max-width: #{$container}px;
     &._min {
-		@media (min-width: 1280px) {
+		@media (min-width: 1205px) {
 			padding: 0 160px;
 		}
     }
@@ -76,19 +76,19 @@ body {
 .section-padding {
     padding: 85.5px 0px;
 
-    @media (min-width: 700px) {
+    @media (min-width: 555px) {
         padding: 64px 0px;
     }
 
-    @media (min-width: 888px) {
+    @media (min-width: 705px) {
         padding: 75.5px 0px;
     }
 
-    @media (min-width: 1280px) {
+    @media (min-width: 985px) {
         padding: 82px 0px;
     }
 
-    @media (min-width: 1280px) {
+    @media (min-width: 1205px) {
         padding: 100px 0px;
     }
 
@@ -117,7 +117,7 @@ body {
 	}
 
 	font-size: 1rem;
-	@media (min-width: 1280px) {
+	@media (min-width: 1205px) {
 		font-size: 1.125rem;
 	}
 
@@ -147,8 +147,21 @@ body {
     }
 }
 
+.hide-on-desktop {
+    @media (max-width: 1280px) {
+        display: none;
+    }
+}
+
+.visible-on-desktop {
+    display: none;
+    @media (min-width: 1281px) {
+        display: block;
+    }
+}
+
 .visible-on-mob {
-    @media (min-width: 550px) {
+    @media (min-width: 551px) {
         display: none;
     }
 }
@@ -213,6 +226,24 @@ body {
 
 .anim-fade-in, .anim-fade-top {
 	opacity: 0;
+}
+
+.anim-fade-top {
+    transform: translate3d(0,25%,0);
+    transition: transform 1s ease;
+    &._animated {
+        transform: translate3d(0,0,0);
+    }
+}
+
+.anim-text-line {
+    display: inline-block;
+    overflow: hidden;
+
+    & > span {
+        display: inline-block;
+        opacity: 0;
+    }
 }
 
 .anim-element {

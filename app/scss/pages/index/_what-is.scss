@@ -14,12 +14,12 @@
 
         transform: translate(65%,-50%);
         top: 50%;
-        @media (min-width: 888px) {
+        @media (min-width: 705px) {
             top: 70%;
             transform: translate(65%,-30%);
         }
 
-        @media (min-width: 1100px) {
+        @media (min-width: 985px) {
             transform: translate(55%,-50%);
         }
 
@@ -36,7 +36,7 @@
         position: absolute;
         left: 0; top: 75%;
         transform: translate(0,-50%);
-        @media (min-width: 1100px) {
+        @media (min-width: 985px) {
             top: 115%;
         }
         width: 30%;
@@ -52,7 +52,7 @@
         display: flex;
         justify-content: space-between;
         flex-direction: column-reverse;
-        @media (min-width: 980px) {
+        @media (min-width: 893px) {
             flex-direction: row;
         }
     }
@@ -62,33 +62,33 @@
     &__image {
         flex: 0 1 100%;
         aspect-ratio: 10/9.2;
-        @media (min-width: 550px) {
+        @media (min-width: 380px) {
             aspect-ratio: 10/8.2;
         }
-        @media (min-width: 700px) {
+        @media (min-width: 555px) {
             aspect-ratio: 10/7;
         }
-        @media (min-width: 888px) {
+        @media (min-width: 705px) {
             aspect-ratio: 10/6.1;
         }
         margin-top: 50px;
-        @media (min-width: 980px) {
+        @media (min-width: 893px) {
             flex: 0 1 48%; margin-top: 0;
             aspect-ratio: auto;    
         }
-        @media (min-width: 1100px) {
+        @media (min-width: 985px) {
             flex: 0 1 43.5%;
         }
-        @media (min-width: 1200px) {
+        @media (min-width: 1105px) {
             flex: 0 1 50%;
         }
-        @media (min-width: 1280px) {
+        @media (min-width: 1205px) {
             flex: 0 1 60%;
         }
-        @media (min-width: 1360px) {
+        @media (min-width: 1285px) {
             flex: 0 1 51%;
         }
-        @media (min-width: 1440px) {
+        @media (min-width: 1365px) {
             flex: 0 1 56%;
         }
 
@@ -102,26 +102,26 @@
             width: 100%; aspect-ratio: 1/1;
             transform: translate(-50%,0);
 
-            @media (min-width: 550px) {
+            @media (min-width: 380px) {
                 top: 0;
             }
             
-            @media (min-width: 700px) {
+            @media (min-width: 555px) {
                 max-width: 600px;
             }
 
-            @media (min-width: 980px) {
+            @media (min-width: 893px) {
                 left: 0; top: 2.5%;
                 transform: translate(0,0);
                 max-width: 100%;
                 
             }
 
-            @media (min-width: 1100px) {
+            @media (min-width: 985px) {
                 top: 5%;
             }
 
-            @media (min-width: 1200px) {
+            @media (min-width: 1105px) {
                 top: 0;
             }
         }
@@ -136,32 +136,32 @@
             &:nth-child(1) {
                 left: 0.5%; top: 3%;
                 opacity: 0.46;
-                @media (min-width: 700px) {
+                @media (min-width: 555px) {
                     left: 10.5%; top: 5%;
                 }
-                @media (min-width: 980px) {
+                @media (min-width: 893px) {
                     left: -1.5%; top: 5%;
                 }
-                @media (min-width: 1280px) {
+                @media (min-width: 1205px) {
                     left: 0%; top: 4%;
                 }
-                @media (min-width: 1360px) {
+                @media (min-width: 1285px) {
                     left: 10.25%; top: 9%;
                 }
 
-                @media (min-width: 1440px) {
+                @media (min-width: 1365px) {
                     top: 2.25%;
                 }
 
                 & img {
                     width: 34%; height: auto;
-                    @media (min-width: 700px) {
+                    @media (min-width: 555px) {
                         width: 27%;
                     }
-                    @media (min-width: 980px) {
+                    @media (min-width: 893px) {
                         width: 34%;
                     }
-                    @media (min-width: 1280px) {
+                    @media (min-width: 1205px) {
                         width: 27.5%;
                     }
                 }
@@ -171,35 +171,35 @@
                 left: -0%; top: 2%;
                 text-align: center;
 
-                @media (min-width: 700px) {
+                @media (min-width: 555px) {
                     top: 4%;
                 }
 
-                @media (min-width: 980px) {
+                @media (min-width: 893px) {
                     left: -4%; top: 2%;
                 }
 
-                @media (min-width: 1280px) {
+                @media (min-width: 1205px) {
                     left: -9%; top: 2%;
                 }
 
-                @media (min-width: 1360px) {
+                @media (min-width: 1285px) {
                     left: 0%; top: 6%;
                 }
 
-                @media (min-width: 1440px) {
+                @media (min-width: 1365px) {
                     top: -0.75%;
                 }
 
                 & img {
                     width: 50%; height: auto;
-                    @media (min-width: 700px) {
+                    @media (min-width: 555px) {
                         width: 40%;
                     }
-                    @media (min-width: 980px) {
+                    @media (min-width: 893px) {
                         width: 50%;
                     }
-                    @media (min-width: 1280px) {
+                    @media (min-width: 1205px) {
                         width: 41%; height: auto;
                     }
                 }
@@ -208,20 +208,20 @@
             &:nth-child(3) {
                 text-align: right;
                 right: 0.5%; top: 3%;
-                @media (min-width: 700px) {
+                @media (min-width: 555px) {
                     right: 11.5%; top: 5%;
                 }
-                @media (min-width: 980px) {
+                @media (min-width: 893px) {
                     right: 6.5%; top: 4.5%;
                 }
-                @media (min-width: 1280px) {
+                @media (min-width: 1205px) {
                     right: 18%; top: 4%;
                 }
-                @media (min-width: 1360px) {
+                @media (min-width: 1285px) {
                     right: 10.25%; top: 9%;
                 }
 
-                @media (min-width: 1440px) {
+                @media (min-width: 1365px) {
                     top: 2.25%;
                 }
                 width: 100%;
@@ -229,13 +229,13 @@
                 
                 & img {
                     width: 34%; height: auto;
-                    @media (min-width: 700px) {
+                    @media (min-width: 555px) {
                         width: 27%;
                     }
-                    @media (min-width: 980px) {
+                    @media (min-width: 893px) {
                         width: 34%;
                     }
-                    @media (min-width: 1280px) {
+                    @media (min-width: 1205px) {
                         width: 27.5%;
                     }
                 }
@@ -247,11 +247,11 @@
 
     &__info {
         
-        @media (min-width: 700px) {
-            margin-top: -15px;
+        @media (min-width: 555px) {
+            margin-top: -10px;
         }
         
-        @media (min-width: 888px) {
+        @media (min-width: 705px) {
             margin-top: 0;
         }
         
@@ -259,38 +259,44 @@
         flex-direction: column;
         align-items: center;
 
-        @media (min-width: 980px) {
+        @media (min-width: 893px) {
             flex: 0 1 49%;
             display: block;
+            margin-top: -5px;
+            padding: 0 0 0 5px;
         }
 
-        @media (min-width: 1100px) {
-            padding: 25px 0 0 0px;
+        @media (min-width: 985px) {
+            padding: 10px 0 0 0px;
             flex: 0 1 50%;
         }
         
-        @media (min-width: 1200px) {
-            padding: 45px 0 0 0px;
+        @media (min-width: 1105px) {
+            padding: 40px 0 0 0px;
             flex: 0 1 auto;
         }
         //flex: 0 1 56%;
-        @media (min-width: 1280px) {
+        @media (min-width: 1205px) {
             flex: 0 1 56%;
-            padding: 25px 0 0 10px;
+            padding: 30px 0 0 10px;
         }
 
-        @media (min-width: 1440px) {
+        @media (min-width: 1285px) {
+            padding: 30px 0 0 10px;
+        }
+
+        @media (min-width: 1365px) {
             flex: 0 1 50%;
-            padding: 20px 0 0 10px;
+            padding: 25px 0 0 10px;
         }
 
         &--body {
             text-align: center;
-            @media (min-width: 888px) {
+            @media (min-width: 705px) {
                 max-width: 600px;
                 margin: 0;
             }
-            @media (min-width: 980px) {
+            @media (min-width: 893px) {
                 max-width: 530px;
                 text-align: left;
             }
@@ -309,35 +315,53 @@
         line-height: 156.5%;
         color: #ABACB1;
 
-        @media (min-width: 700px) {
+        @media (min-width: 555px) {
             font-size: 0.9375rem;
+            padding-top: 7px;
         }
 
-        @media (min-width: 888px) {
+        @media (min-width: 705px) {
             font-size: 1rem;
+            padding-top: 5px;
         }
 
-        padding-top: 10px;
-
-        @media (min-width: 1200px) {
-            padding-top: 15px;
+        @media (min-width: 893px) {
+            padding-top: 5px;
+        }
+        
+        @media (min-width: 985px) {
+            padding-top: 5px;
         }
 
-        @media (min-width: 1280px) {
+        @media (min-width: 1105px) {
+            padding-top: 5px;
+        }
+
+        @media (min-width: 1205px) {
             font-size: 1.125rem;
+        }
+
+        @media (min-width: 1365px) {
+            padding-top: 10px;
+        }
+
+        & p {
+            padding: 7px 0;
         }
     }
 
     // .what-is__blockchain
 
     &__blockchain {
-        padding-top: 40px;
+        padding-top: 35px;
 
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        @media (min-width: 980px) {
+        text-align: left;
+        @media (min-width: 893px) {
             justify-content: stretch;
+            padding-top: 30px;
         }
 
         margin: -10px;

@@ -2,7 +2,7 @@ body,html {
     -webkit-text-size-adjust: 100%
 }
 
-button,hr,input {
+.swiper-cube,.swiper-flip,button,hr,input {
     overflow: visible
 }
 
@@ -10,12 +10,17 @@ progress,sub,sup {
     vertical-align: baseline
 }
 
-*,.swiper-lazy-preloader,:after,:before,[type=checkbox],[type=radio],legend {
+*,:after,:before,[type=checkbox],[type=radio],legend {
     box-sizing: border-box
 }
 
 .swiper,ul li {
     list-style: none
+}
+
+.bg-img,.check-nft__slide {
+    -webkit-user-select: none;
+    -ms-user-select: none
 }
 
 * {
@@ -501,10 +506,6 @@ summary {
     font-size: 0
 }
 
-.swiper-cube,.swiper-flip {
-    overflow: visible
-}
-
 .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
     -webkit-transform: scale(.33);
     transform: scale(.33);
@@ -596,10 +597,6 @@ button.swiper-pagination-bullet {
     transition: .2s transform,.2s top
 }
 
-.swiper-pagination-lock,.swiper-scrollbar-lock {
-    display: none
-}
-
 .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0 var(--swiper-pagination-bullet-horizontal-gap,4px)
 }
@@ -617,6 +614,10 @@ button.swiper-pagination-bullet {
 
 .swiper-horizontal.swiper-rtl>.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
     transition: .2s transform,.2s right
+}
+
+.swiper-fade.swiper-free-mode .swiper-slide,.swiper-free-mode>.swiper-wrapper {
+    transition-timing-function: ease-out
 }
 
 .swiper-pagination-progressbar {
@@ -654,6 +655,10 @@ button.swiper-pagination-bullet {
     height: 100%;
     left: 0;
     top: 0
+}
+
+.swiper-pagination-lock {
+    display: none
 }
 
 .swiper-scrollbar {
@@ -695,6 +700,10 @@ button.swiper-pagination-bullet {
     top: 0
 }
 
+.swiper-scrollbar-lock {
+    display: none
+}
+
 .swiper-zoom-container {
     width: 100%;
     height: 100%;
@@ -722,6 +731,7 @@ button.swiper-pagination-bullet {
     z-index: 10;
     -webkit-transform-origin: 50%;
     transform-origin: 50%;
+    box-sizing: border-box;
     border: 4px solid;
     border-radius: 50%;
     border-top-color: transparent
@@ -774,7 +784,6 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-free-mode>.swiper-wrapper {
-    transition-timing-function: ease-out;
     margin: 0 auto
 }
 
@@ -785,10 +794,6 @@ button.swiper-pagination-bullet {
 .swiper-grid-column>.swiper-wrapper {
     flex-wrap: wrap;
     flex-direction: column
-}
-
-.swiper-fade.swiper-free-mode .swiper-slide {
-    transition-timing-function: ease-out
 }
 
 .swiper-fade .swiper-slide {
@@ -970,9 +975,7 @@ body._active,body._popup-active {
     top: 0;
     width: 100%;
     height: 100%;
-    -webkit-user-select: none;
     -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     -o-object-fit: cover;
     object-fit: cover;
@@ -1002,6 +1005,10 @@ body._active,body._popup-active {
     background: var(--accent-dark)
 }
 
+.visible-on-desktop {
+    display: none
+}
+
 .social__list {
     display: flex;
     flex-wrap: wrap;
@@ -1012,6 +1019,11 @@ body._active,body._popup-active {
 .social._column .social__list {
     flex-direction: column;
     flex-wrap: nowrap
+}
+
+.header__nav--btn,.header__nav--list,.intro__container {
+    align-items: center;
+    display: flex
 }
 
 .social__item {
@@ -1050,7 +1062,34 @@ body._active,body._popup-active {
     transition: opacity .4s ease
 }
 
-.anim-element,.anim-fade-in,.anim-fade-top {
+.anim-fade-in,.anim-fade-top {
+    opacity: 0
+}
+
+.anim-fade-top {
+    -webkit-transform: translate3d(0,25%,0);
+    transform: translate3d(0,25%,0);
+    transition: -webkit-transform 1s ease;
+    transition: transform 1s ease;
+    transition: transform 1s ease,-webkit-transform 1s ease
+}
+
+.anim-fade-top._animated {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0)
+}
+
+.anim-text-line {
+    display: inline-block;
+    overflow: hidden
+}
+
+.anim-text-line>span {
+    display: inline-block;
+    opacity: 0
+}
+
+.anim-element {
     opacity: 0
 }
 
@@ -1060,7 +1099,7 @@ body._active,body._popup-active {
 
 .main-title {
     font-weight: 800;
-    font-size: 4.375rem;
+    font-size: 4rem;
     line-height: 96%;
     margin: 0
 }
@@ -1074,7 +1113,7 @@ body._active,body._popup-active {
     line-height: 104.5%
 }
 
-.nft-section__title._large,.section-title._super-large {
+.section-title._super-large {
     font-size: 3.375rem
 }
 
@@ -1089,12 +1128,21 @@ body._active,body._popup-active {
     top: 0;
     z-index: 100;
     width: 100%;
+    transition: opacity .2s ease-in-out,-webkit-transform .5s ease-in-out;
+    transition: opacity .2s ease-in-out,transform .5s ease-in-out;
+    transition: opacity .2s ease-in-out,transform .5s ease-in-out,-webkit-transform .5s ease-in-out;
+    -webkit-transform: translate3d(0,-100%,0);
+    transform: translate3d(0,-100%,0);
     opacity: 0
 }
 
+.header._loaded {
+    opacity: 1;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0)
+}
+
 .header__nav--list {
-    display: flex;
-    align-items: center;
     flex-wrap: wrap;
     margin: -5px -15px
 }
@@ -1112,12 +1160,8 @@ body._active,body._popup-active {
     font-size: .875rem;
     line-height: 144%;
     color: #fff;
-    display: flex;
-    align-items: center;
     padding: 18px 22px;
     background: rgba(255,255,255,.07);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
     border-radius: 69px;
     position: relative
 }
@@ -1168,19 +1212,20 @@ body._active,body._popup-active {
 
 .intro {
     position: relative;
-    padding-top: calc(var(--height-header) + 130px);
-    padding-bottom: 59.5px
+    z-index: 2;
+    padding-top: calc(var(--height-header) + 137px);
+    padding-bottom: 145px
 }
 
 .intro__bg,.intro__bg--img,.intro__bg::after {
     position: absolute;
     width: 100%;
-    top: 0;
-    height: 100%
+    top: 0
 }
 
 .intro__bg {
     left: 0;
+    height: 100%;
     z-index: -1;
     text-align: center
 }
@@ -1188,10 +1233,12 @@ body._active,body._popup-active {
 .intro__bg::after {
     content: "";
     left: 0;
+    height: calc(100% + 1px);
     background: linear-gradient(180.03deg,rgba(9,10,26,.51) 8.23%,#090A1A 99.98%)
 }
 
 .intro__bg--img {
+    height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
     -o-object-position: center top;
@@ -1201,9 +1248,11 @@ body._active,body._popup-active {
     transform: translate(-50%,0)
 }
 
+.dao-maker__block,.dao-maker__logo,.what-is {
+    position: relative
+}
+
 .intro__container {
-    display: flex;
-    align-items: center;
     justify-content: center
 }
 
@@ -1213,18 +1262,26 @@ body._active,body._popup-active {
     max-width: 400px
 }
 
+.intro__title>.anim-text-line {
+    margin: -5px 0
+}
+
 .intro__text {
-    padding-top: 14px;
+    padding-top: 5px;
     font-size: 1.125rem;
     line-height: 144%
 }
 
 .intro__link {
-    margin-top: 37px
+    margin-top: 33px
 }
 
 .intro__social {
     display: none
+}
+
+.dao-maker.section-padding {
+    padding-top: 10px
 }
 
 .dao-maker__container {
@@ -1232,11 +1289,12 @@ body._active,body._popup-active {
 }
 
 .dao-maker__block {
-    position: relative;
     display: -ms-grid;
     display: grid;
     overflow: hidden;
-    border-radius: 50px
+    border-radius: max(15vw,50px);
+    padding-top: 100px;
+    margin-top: -100px
 }
 
 .dao-maker__block>* {
@@ -1251,9 +1309,9 @@ body._active,body._popup-active {
 
 .dao-maker__block--bg {
     position: absolute;
-    left: 0;
+    left: -5px;
     top: 0;
-    width: 100%;
+    width: calc(100% + 5px);
     height: 100%;
     z-index: -1;
     padding: 5px
@@ -1261,20 +1319,24 @@ body._active,body._popup-active {
 
 .dao-maker__block--bg svg {
     width: 100%;
-    height: 100%
+    height: 100%;
+    display: none
+}
+
+.dao-maker__block--bg svg:nth-child(4) {
+    display: block
 }
 
 .dao-maker__logo {
     width: 90%;
     aspect-ratio: 1/1;
-    position: relative;
     z-index: -1
 }
 
 .dao-maker__logo--body {
     position: absolute;
     left: -25%;
-    top: 0;
+    top: -12%;
     width: 150%;
     aspect-ratio: 1/1;
     border-radius: 50%;
@@ -1293,7 +1355,7 @@ body._active,body._popup-active {
 }
 
 .dao-maker__info {
-    padding: 176px 0 130px
+    padding: 183px 0 130px
 }
 
 .dao-maker__info--body {
@@ -1342,10 +1404,6 @@ body._active,body._popup-active {
     font-size: .9375rem;
     line-height: 156.5%;
     color: rgba(255,255,255,.39)
-}
-
-.what-is {
-    position: relative
 }
 
 .what-is__decor-element {
@@ -1408,15 +1466,15 @@ body._active,body._popup-active {
     width: 100%
 }
 
+.what-is__image--item:nth-child(1) img,.what-is__image--item:nth-child(3) img {
+    width: 34%;
+    height: auto
+}
+
 .what-is__image--item:nth-child(1) {
     left: .5%;
     top: 3%;
     opacity: .46
-}
-
-.what-is__image--item:nth-child(1) img {
-    width: 34%;
-    height: auto
 }
 
 .what-is__image--item:nth-child(2) {
@@ -1438,11 +1496,6 @@ body._active,body._popup-active {
     opacity: .46
 }
 
-.what-is__image--item:nth-child(3) img {
-    width: 34%;
-    height: auto
-}
-
 .what-is__info {
     display: flex;
     flex-direction: column;
@@ -1456,15 +1509,19 @@ body._active,body._popup-active {
 .what-is__text {
     font-size: 1rem;
     line-height: 156.5%;
-    color: #abacb1;
-    padding-top: 10px
+    color: #abacb1
+}
+
+.what-is__text p {
+    padding: 7px 0
 }
 
 .what-is__blockchain {
-    padding-top: 40px;
+    padding-top: 35px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    text-align: left;
     margin: -10px
 }
 
@@ -1561,9 +1618,7 @@ body._active,body._popup-active {
 }
 
 .check-nft__slide {
-    -webkit-user-select: none;
     -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none
 }
 
@@ -1578,7 +1633,7 @@ body._active,body._popup-active {
     background: #131423;
     border-radius: 52px;
     text-align: center;
-    padding: 44px 15px 43px;
+    padding: 40px 15px;
     position: relative;
     z-index: 2
 }
@@ -1599,7 +1654,7 @@ body._active,body._popup-active {
 
 .check-nft__slide--image {
     width: 100%;
-    padding-top: 55%;
+    padding-top: 50%;
     position: relative;
     max-width: 500px;
     margin-bottom: 25px
@@ -1640,7 +1695,7 @@ body._active,body._popup-active {
 
 .nft-section {
     position: relative;
-    margin-top: -85px
+    margin-top: -3px
 }
 
 .nft-section__decor-element {
@@ -1692,6 +1747,10 @@ body._active,body._popup-active {
 
 .nft-section__info--body {
     max-width: 580px
+}
+
+.nft-section__title._large {
+    font-size: 3.375rem
 }
 
 .nft-section__text {
@@ -1757,7 +1816,7 @@ body._active,body._popup-active {
 }
 
 .nft-section__image {
-    padding-top: 88px;
+    padding-top: 68px;
     max-width: 570px;
     flex: 0 1 49%;
     display: flex;
@@ -1805,7 +1864,7 @@ body._active,body._popup-active {
 .subscribe__block {
     margin-left: -30px;
     margin-right: -30px;
-    margin-top: -5px
+    margin-top: 10px
 }
 
 .subscribe__block--body {
@@ -2137,7 +2196,8 @@ body._active,body._popup-active {
 .footer__soon--timer {
     margin-top: 15px;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    align-items: center
 }
 
 .footer__soon--timer .timer-value {
@@ -2199,15 +2259,17 @@ body._active,body._popup-active {
     width: calc(80% - 50px)
 }
 
-@media (min-width:400px) {
-    .check-nft__slider {
-        padding-right: 500px
+@media (min-width:380px) {
+    .intro {
+        padding-top: calc(var(--height-header) + 145px)
     }
-}
 
-@media (min-width:550px) {
-    .visible-on-mob {
-        display: none
+    .dao-maker.section-padding,.intro__text {
+        padding-top: 0
+    }
+
+    .intro__link {
+        margin-top: 37px
     }
 
     .what-is__image {
@@ -2218,12 +2280,24 @@ body._active,body._popup-active {
         top: 0
     }
 
+    .check-nft__slider {
+        padding: 40px 10px 0
+    }
+
+    .check-nft__slide--body {
+        padding: 40px 15px
+    }
+
+    .check-nft__slide--image {
+        padding-top: 52%
+    }
+
     .nft-section {
-        margin-top: 5px
+        margin-top: -3px
     }
 
     .nft-section__title._large {
-        font-size: 2.875rem
+        font-size: 3.375rem
     }
 
     .nft-section__text {
@@ -2244,7 +2318,7 @@ body._active,body._popup-active {
     }
 
     .subscribe__block {
-        margin-top: 20px
+        margin-top: 15px
     }
 
     .subscribe__form {
@@ -2254,13 +2328,33 @@ body._active,body._popup-active {
     .subscribe__sponsors {
         margin-top: -20px
     }
+}
 
-    .footer__row._column-on-table .footer__row--col:nth-child(1) {
-        width: auto
+@media (min-width:400px) {
+    .dao-maker__block {
+        border-radius: max(15vw,50px)
+    }
+
+    .check-nft__slider {
+        padding-right: 500px
+    }
+}
+
+@media (min-width:450px) {
+    .dao-maker__block--bg svg:nth-child(3) {
+        display: block
+    }
+
+    .dao-maker__block--bg svg:nth-child(4) {
+        display: none
     }
 }
 
 @media (min-width:551px) {
+    .visible-on-mob {
+        display: none
+    }
+
     .header__nav--btn {
         font-size: 1.125rem
     }
@@ -2274,11 +2368,7 @@ body._active,body._popup-active {
     }
 }
 
-@media (min-width:700px) {
-    .check-nft__header,.footer__copy,.footer__subscribe--legend {
-        text-align: left
-    }
-
+@media (min-width:555px) {
     .main {
         padding-bottom: 65px
     }
@@ -2287,16 +2377,37 @@ body._active,body._popup-active {
         padding: 64px 0
     }
 
+    .main-title {
+        font-size: 4.375rem
+    }
+
     .section-title,.section-title._large,.section-title._super-large {
         font-size: 3.375rem
     }
 
     .intro {
-        padding-bottom: 61px
+        padding-bottom: 125px;
+        padding-top: calc(var(--height-header) + 135px)
+    }
+
+    .dao-maker.section-padding {
+        padding-top: 0
     }
 
     .dao-maker__container {
         padding: 0 30px
+    }
+
+    .dao-maker__block {
+        border-radius: max(10vw,50px)
+    }
+
+    .dao-maker__block--bg svg:nth-child(2) {
+        display: block
+    }
+
+    .dao-maker__block--bg svg:nth-child(3),.dao-maker__block--bg svg:nth-child(4) {
+        display: none
     }
 
     .dao-maker__logo {
@@ -2304,7 +2415,7 @@ body._active,body._popup-active {
     }
 
     .dao-maker__info {
-        padding: 155px 0 130px 40px
+        padding: 160px 0 130px
     }
 
     .what-is__image {
@@ -2342,16 +2453,19 @@ body._active,body._popup-active {
     }
 
     .what-is__info {
-        margin-top: -15px
+        margin-top: -10px
     }
 
     .what-is__text {
-        font-size: .9375rem
+        font-size: .9375rem;
+        padding-top: 7px
     }
 
     .check-nft__header {
         flex-direction: row;
-        align-items: flex-end
+        align-items: flex-end;
+        text-align: left;
+        margin-top: 8px
     }
 
     .check-nft__link {
@@ -2359,7 +2473,15 @@ body._active,body._popup-active {
     }
 
     .check-nft__slider {
-        padding: 44px 0 0
+        padding: 57px 0 0
+    }
+
+    .check-nft__slide--body {
+        padding: 40px 15px
+    }
+
+    .check-nft__slide--image {
+        padding-top: 61%
     }
 
     .check-nft__slide--name {
@@ -2367,22 +2489,19 @@ body._active,body._popup-active {
     }
 
     .nft-section {
-        margin-top: 70px
+        margin-top: 50px
     }
 
     .nft-section__text {
         margin: 0 -15px
     }
 
-    .footer__soon--timer,.subscribe__block,.subscribe__sponsors {
-        margin-top: 0
-    }
-
     .nft-section__price strong {
-        font-size: 4.9413rem
+        font-size: 5.5906rem
     }
 
     .subscribe__block {
+        margin-top: 10px;
         margin-left: 0;
         margin-right: 0
     }
@@ -2407,12 +2526,24 @@ body._active,body._popup-active {
         max-width: 410px
     }
 
+    .subscribe__sponsors {
+        margin-top: 0
+    }
+
     .footer {
         padding: 60px 0
     }
 
+    .footer__row._column-on-table .footer__row--col:nth-child(1) {
+        width: auto
+    }
+
     .footer__subscribe {
         max-width: 360px
+    }
+
+    .footer__subscribe--legend {
+        text-align: left
     }
 
     .footer__soon {
@@ -2422,9 +2553,18 @@ body._active,body._popup-active {
     .footer__soon--element {
         margin-right: 37px
     }
+
+    .footer__soon--timer {
+        margin-top: 0;
+        align-items: stretch
+    }
+
+    .footer__copy {
+        text-align: left
+    }
 }
 
-@media (min-width:888px) {
+@media (min-width:705px) {
     .main {
         padding-bottom: 80px
     }
@@ -2447,7 +2587,7 @@ body._active,body._popup-active {
 
     .intro {
         padding-top: calc(var(--height-header) + 100px);
-        padding-bottom: 49.5px
+        padding-bottom: 125px
     }
 
     .intro__container {
@@ -2466,6 +2606,14 @@ body._active,body._popup-active {
 
     .intro__social {
         display: block
+    }
+
+    .dao-maker.section-padding {
+        padding-top: 0
+    }
+
+    .dao-maker__block {
+        border-radius: 50px
     }
 
     .dao-maker__logo--img {
@@ -2492,15 +2640,28 @@ body._active,body._popup-active {
     }
 
     .what-is__text {
-        font-size: 1rem
+        font-size: 1rem;
+        padding-top: 5px
+    }
+
+    .check-nft__header {
+        margin-top: 20px
     }
 
     .check-nft__slider {
-        padding: 44px 0 0
+        padding: 57px 0 0
+    }
+
+    .check-nft__slide--body {
+        padding: 38px 25px 45px
+    }
+
+    .check-nft__slide--image {
+        padding-top: 65%
     }
 
     .nft-section {
-        margin-top: 50px
+        margin-top: 55px
     }
 
     .nft-section__decor-element {
@@ -2513,6 +2674,14 @@ body._active,body._popup-active {
         margin: 0
     }
 
+    .nft-section__image {
+        padding-top: 88px
+    }
+
+    .nft-section__price strong {
+        font-size: 5.5906rem
+    }
+
     .subscribe__block {
         margin-top: 30px
     }
@@ -2522,34 +2691,43 @@ body._active,body._popup-active {
     }
 
     .footer {
-        padding: 75px 0 60px
+        padding: 80px 0 60px
+    }
+
+    .footer__row {
+        flex-direction: row;
+        align-items: flex-end
+    }
+
+    .footer__row._reverse {
+        flex-direction: row
+    }
+
+    .footer__row._column-on-table {
+        align-items: stretch
     }
 }
 
 @media (min-width:889px) {
-    .intro__bg--img {
-        -webkit-transform: translate(-42%,0);
-        transform: translate(-42%,0);
-        left: 50%;
-        width: 1900px
-    }
-
     .check-nft__slider::after,.check-nft__slider::before {
         width: 40%
     }
-
-    .check-nft__slide--body {
-        padding: 46px 25px 66px
-    }
 }
 
-@media (min-width:980px) {
+@media (min-width:893px) {
     .main {
         padding-bottom: 75px
     }
 
     .section-title._super-large {
         font-size: 4rem
+    }
+
+    .intro__bg--img {
+        -webkit-transform: translate(-50%,0);
+        transform: translate(-50%,0);
+        left: 50%;
+        width: 1900px
     }
 
     .dao-maker__logo {
@@ -2603,7 +2781,9 @@ body._active,body._popup-active {
 
     .what-is__info {
         flex: 0 1 49%;
-        display: block
+        display: block;
+        margin-top: -5px;
+        padding: 0 0 0 5px
     }
 
     .what-is__info--body {
@@ -2611,16 +2791,29 @@ body._active,body._popup-active {
         text-align: left
     }
 
+    .what-is__text {
+        padding-top: 5px
+    }
+
     .what-is__blockchain {
-        justify-content: stretch
+        justify-content: stretch;
+        padding-top: 30px
+    }
+
+    .check-nft__header {
+        margin-top: 0
     }
 
     .check-nft__slider {
         padding: 61px 0 0
     }
 
+    .check-nft__slide--body {
+        padding: 46px 25px 45px
+    }
+
     .nft-section {
-        margin-top: 0
+        margin-top: 35px
     }
 
     .nft-section__container {
@@ -2679,42 +2872,44 @@ body._active,body._popup-active {
     .footer {
         padding: 75px 0 60px
     }
-
-    .footer__row {
-        flex-direction: row;
-        align-items: flex-end
-    }
-
-    .footer__row._reverse {
-        flex-direction: row
-    }
-
-    .footer__row._column-on-table {
-        align-items: stretch
-    }
 }
 
-@media (min-width:981px) {
-    .intro__bg--img {
-        -webkit-transform: translate(-47.5%,0);
-        transform: translate(-47.5%,0);
-        left: 50%;
-        width: 1800px
-    }
-}
-
-@media (min-width:1100px) {
+@media (min-width:985px) {
     .main {
         padding-bottom: 90px
+    }
+
+    .section-padding {
+        padding: 82px 0
     }
 
     .section-title._super-large {
         font-size: 4.625rem
     }
 
+    .intro {
+        padding-top: calc(var(--height-header) + 110px);
+        padding-bottom: 125px
+    }
+
+    .intro__bg--img {
+        -webkit-transform: translate(-47.5%,0);
+        transform: translate(-47.5%,0);
+        left: 50%;
+        width: 1800px
+    }
+
+    .dao-maker.section-padding {
+        padding-top: 0
+    }
+
     .dao-maker__block {
         display: flex;
         align-items: center
+    }
+
+    .dao-maker__block--bg {
+        top: 100px
     }
 
     .dao-maker__logo--body {
@@ -2771,8 +2966,16 @@ body._active,body._popup-active {
     }
 
     .what-is__info {
-        padding: 25px 0 0;
+        padding: 10px 0 0;
         flex: 0 1 50%
+    }
+
+    .what-is__text {
+        padding-top: 5px
+    }
+
+    .check-nft__header {
+        margin-top: 5px
     }
 
     .check-nft__slider {
@@ -2801,7 +3004,7 @@ body._active,body._popup-active {
     }
 
     .subscribe__block {
-        margin-top: 35px
+        margin-top: 20px
     }
 
     .subscribe__block--body {
@@ -2834,7 +3037,7 @@ body._active,body._popup-active {
     }
 
     .subscribe__sponsors {
-        padding-top: 96px
+        padding-top: 93px
     }
 
     .subscribe__sponsors--list {
@@ -2859,14 +3062,7 @@ body._active,body._popup-active {
     }
 }
 
-@media (min-width:1101px) {
-    .intro {
-        padding-top: calc(var(--height-header) + 110px);
-        padding-bottom: 43px
-    }
-}
-
-@media (min-width:1200px) {
+@media (min-width:1105px) {
     .section-title._super-large {
         font-size: 4.625rem
     }
@@ -2876,6 +3072,11 @@ body._active,body._popup-active {
         padding-left: 130px
     }
 
+    .intro {
+        padding-top: calc(var(--height-header) + 120px);
+        padding-bottom: 125px
+    }
+
     .dao-maker__logo {
         margin-bottom: -17%;
         margin-left: -9%;
@@ -2883,7 +3084,7 @@ body._active,body._popup-active {
     }
 
     .dao-maker__info {
-        padding: 160px 0 120px 95px
+        padding: 140px 0 130px 95px
     }
 
     .what-is__image {
@@ -2895,24 +3096,32 @@ body._active,body._popup-active {
     }
 
     .what-is__info {
-        padding: 45px 0 0;
+        padding: 40px 0 0;
         flex: 0 1 auto
     }
 
     .what-is__text {
-        padding-top: 15px
+        padding-top: 5px
+    }
+
+    .check-nft__header {
+        margin-top: 40px
     }
 
     .check-nft__slider {
-        padding: 100px 0 0
+        padding: 125px 0 0
+    }
+
+    .check-nft__slide--body {
+        padding: 46px 25px 66px
     }
 
     .nft-section {
-        margin-top: 75px
+        margin-top: 30px
     }
 
     .subscribe__block {
-        margin-top: 13px
+        margin-top: -5px
     }
 
     .subscribe__bg--element:nth-child(1) {
@@ -2943,23 +3152,12 @@ body._active,body._popup-active {
         font-size: 6.25rem
     }
 
-    .intro {
-        padding-top: calc(var(--height-header) + 70px)
-    }
-
-    .intro__bg--img {
-        -webkit-transform: translate(-45%,0);
-        transform: translate(-45%,0);
-        left: 50%;
-        width: 1200px
-    }
-
     .intro__info {
         max-width: 500px
     }
 }
 
-@media (min-width:1280px) {
+@media (min-width:1205px) {
     .main {
         padding-bottom: 105px
     }
@@ -2985,7 +3183,15 @@ body._active,body._popup-active {
     }
 
     .intro {
-        padding-bottom: 5px
+        padding-bottom: 105px;
+        padding-top: calc(var(--height-header) + 70px)
+    }
+
+    .intro__bg--img {
+        -webkit-transform: translate(-45%,0);
+        transform: translate(-45%,0);
+        left: 50%;
+        width: 1200px
     }
 
     .intro__text {
@@ -2994,6 +3200,18 @@ body._active,body._popup-active {
 
     .dao-maker__text,.what-is__text {
         font-size: 1.125rem
+    }
+
+    .dao-maker.section-padding {
+        padding-top: 0
+    }
+
+    .dao-maker__block--bg svg:nth-child(1) {
+        display: block
+    }
+
+    .dao-maker__block--bg svg:nth-child(2),.dao-maker__block--bg svg:nth-child(3),.dao-maker__block--bg svg:nth-child(4) {
+        display: none
     }
 
     .dao-maker__logo {
@@ -3040,11 +3258,27 @@ body._active,body._popup-active {
 
     .what-is__info {
         flex: 0 1 56%;
-        padding: 25px 0 0 10px
+        padding: 30px 0 0 10px
+    }
+
+    .check-nft__title._large,.nft-section__title._large {
+        font-size: 4.5rem
+    }
+
+    .check-nft__container._min {
+        padding: 0 75px
+    }
+
+    .check-nft__header {
+        margin-top: 25px
+    }
+
+    .check-nft__slider {
+        padding: 110px 0 0
     }
 
     .nft-section {
-        margin-top: 30px
+        margin-top: 35px
     }
 
     .nft-section__container._min {
@@ -3053,10 +3287,6 @@ body._active,body._popup-active {
 
     .nft-section__info {
         flex: 0 1 47%
-    }
-
-    .nft-section__title._large {
-        font-size: 4.5rem
     }
 
     .nft-section__text {
@@ -3133,6 +3363,10 @@ body._active,body._popup-active {
         margin-top: 29.12px
     }
 
+    .subscribe__sponsors {
+        padding-top: 100px
+    }
+
     .footer__container._min {
         padding: 0 80px
     }
@@ -3162,7 +3396,13 @@ body._active,body._popup-active {
     }
 }
 
-@media (min-width:1360px) {
+@media (min-width:1281px) {
+    .visible-on-desktop {
+        display: block
+    }
+}
+
+@media (min-width:1285px) {
     .main {
         padding-bottom: 120px
     }
@@ -3179,6 +3419,10 @@ body._active,body._popup-active {
         width: 1900px;
         -webkit-transform: translate(-47%,0);
         transform: translate(-47%,0)
+    }
+
+    .dao-maker__block {
+        border-radius: 70px
     }
 
     .dao-maker__info {
@@ -3204,12 +3448,20 @@ body._active,body._popup-active {
         top: 9%
     }
 
-    .nft-section {
-        margin-top: 8px
+    .what-is__info {
+        padding: 30px 0 0 10px
     }
 
-    .nft-section__container._min {
+    .check-nft__container._min,.nft-section__container._min {
         padding: 0 160px
+    }
+
+    .check-nft__header {
+        margin-top: 30px
+    }
+
+    .nft-section {
+        margin-top: 50px
     }
 
     .subscribe__block {
@@ -3226,7 +3478,7 @@ body._active,body._popup-active {
     }
 }
 
-@media (min-width:1440px) {
+@media (min-width:1365px) {
     .section-title._large {
         font-size: 5.125rem
     }
@@ -3268,11 +3520,23 @@ body._active,body._popup-active {
 
     .what-is__info {
         flex: 0 1 50%;
-        padding: 20px 0 0 10px
+        padding: 25px 0 0 10px
+    }
+
+    .what-is__text {
+        padding-top: 10px
+    }
+
+    .check-nft__header {
+        margin-top: 25px
+    }
+
+    .check-nft__slider {
+        padding: 100px 0 0
     }
 
     .nft-section {
-        margin-top: -30px
+        margin-top: 45px
     }
 
     .nft-section__info {
@@ -3305,7 +3569,7 @@ body._active,body._popup-active {
     }
 
     .nft-section {
-        margin-top: 0
+        margin-top: 30px
     }
 
     .nft-section__decor-element {
@@ -3321,6 +3585,12 @@ body._active,body._popup-active {
 @media (min-width:1600px) {
     .check-nft__slider {
         padding: 100px 0 0
+    }
+}
+
+@media (max-width:1280px) {
+    .hide-on-desktop {
+        display: none
     }
 }
 

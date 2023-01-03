@@ -1,36 +1,36 @@
 .nft-section {
 
     position: relative;
-    margin-top: -85px;
-    @media (min-width: 550px) {
-        margin-top: 5px;
+    margin-top: -3px;
+    @media (min-width: 380px) {
+        margin-top: -3px;
     }
-    @media (min-width: 700px) {
-        margin-top: 70px;
-    }
-    @media (min-width: 888px) {
+    @media (min-width: 555px) {
         margin-top: 50px;
     }
-    @media (min-width: 980px) {
-        margin-top: 0px;
+    @media (min-width: 705px) {
+        margin-top: 55px;
     }
-    @media (min-width: 1100px) {
+    @media (min-width: 893px) {
+        margin-top: 35px;
+    }
+    @media (min-width: 985px) {
         margin-top: 30px;
     }
-    @media (min-width: 1200px) {
-        margin-top: 75px;
-    }
-    @media (min-width: 1280px) {
+    @media (min-width: 1105px) {
         margin-top: 30px;
     }
-    @media (min-width: 1360px) {
-        margin-top: 8px;
+    @media (min-width: 1205px) {
+        margin-top: 35px;
     }
-    @media (min-width: 1440px) {
-        margin-top: -30px;
+    @media (min-width: 1285px) {
+        margin-top: 50px;
+    }
+    @media (min-width: 1365px) {
+        margin-top: 45px;
     }
     @media (min-width: 1500px) {
-        margin-top: 0;
+        margin-top: 30px;
     }
 
     // .nft-section__decor-element
@@ -46,12 +46,12 @@
 
         transform: translate(-65%,-50%);
         top: 50%;
-        @media (min-width: 888px) {
+        @media (min-width: 705px) {
             top: 70%;
             transform: translate(-65%,-30%);
         }
 
-        @media (min-width: 1100px) {
+        @media (min-width: 985px) {
             transform: translate(-65%,-30%);
         }
 
@@ -69,7 +69,7 @@
         right: 0; top: 75%;
         transform: translate(0,-50%);
         text-align: right;
-        @media (min-width: 1100px) {
+        @media (min-width: 985px) {
             top: 115%;
         }
         width: 100%; min-height: 100%;
@@ -91,16 +91,16 @@
 
         text-align: center;
 
-        @media (min-width: 980px) {
+        @media (min-width: 893px) {
             flex-direction: row;
             text-align: left;
         }
 
         &._min {
-            @media (min-width: 1280px) {
+            @media (min-width: 1205px) {
                 padding: 0 80px;
             }
-            @media (min-width: 1360px) {
+            @media (min-width: 1285px) {
                 padding: 0 160px;   
             }
         }
@@ -111,10 +111,10 @@
     &__info {
 
         flex: 0 1 52%;
-        @media (min-width: 1280px) {
+        @media (min-width: 1205px) {
             flex: 0 1 47%;
         }
-        @media (min-width: 1440px) {
+        @media (min-width: 1365px) {
             flex: 0 1 51%;
         }
 
@@ -122,7 +122,7 @@
 
         &--body {
             max-width: 580px;
-            @media (min-width: 980px) {
+            @media (min-width: 893px) {
                 max-width: 600px;
             }
         }
@@ -134,18 +134,18 @@
         &._large {
             font-size: 3.375rem;
         }
-        @media (min-width: 550px) {
+        @media (min-width: 380px) {
             &._large {
-                font-size: 2.875rem;
+                font-size: 3.375rem;
             }
         }
-        @media (min-width: 1280px) {
+        @media (min-width: 1205px) {
             &._large {
                 font-size: 4.5rem;
             }
         }
     
-        /* @media (min-width: 1360px) {
+        /* @media (min-width: 1285px) {
             font-size: 4.5rem;
         } */
     }
@@ -157,19 +157,19 @@
 
         margin: 0 -5px;
 
-        @media (min-width: 550px) {
+        @media (min-width: 380px) {
             margin: 0;
         }
 
-        @media (min-width: 700px) {
+        @media (min-width: 555px) {
             margin: 0 -15px;
         }
-        @media (min-width: 888px) {
+        @media (min-width: 705px) {
             margin: 0;
         }
 
         font-size: 1rem;
-        @media (min-width: 1280px) {
+        @media (min-width: 1205px) {
             padding-top: 14px;
             font-size: 1.125rem;
         }
@@ -194,7 +194,7 @@
             border-radius: 90px;
 
             padding: 6.7px;
-            @media (min-width: 1280px) {
+            @media (min-width: 1205px) {
                 padding: 8px;
             }
         }
@@ -205,15 +205,15 @@
             & img {
                 border-radius: 50%;
                 width: 52px; height: 52px;
-                @media (min-width: 1280px) {
+                @media (min-width: 1205px) {
                     width: 62px; height: 62px;
                 }
             }
             padding-right: 10px;
-            @media (min-width: 550px) {
+            @media (min-width: 380px) {
                 padding-right: 16px;
             }
-            @media (min-width: 1280px) {
+            @media (min-width: 1205px) {
                 padding-right: 19px;
             }
         }
@@ -223,13 +223,13 @@
         &--name {
             max-width: 140px;
             margin-right: 11px;
-            @media (min-width: 550px) {
+            @media (min-width: 380px) {
                 max-width: 110px;
                 margin-right: 31px;
             }
 
             font-size: 0.9546rem;
-            @media (min-width: 1280px) {
+            @media (min-width: 1205px) {
                 font-size: 1.125rem;
                 max-width: 128px;
             }
@@ -244,7 +244,7 @@
             text-align: center;
 
             padding: 6px 23px;
-            @media (min-width: 1280px) {
+            @media (min-width: 1205px) {
                 padding: 11px 29px;
             }
 
@@ -256,7 +256,7 @@
             & strong {
                 font-weight: 400;
                 font-size: 0.9006rem;
-                @media (min-width: 1280px) {
+                @media (min-width: 1205px) {
                     font-size: 1.0616rem;
                 }
                 line-height: 156.5%;
@@ -266,7 +266,7 @@
                 display: block;
                 margin-top: -5px;
                 font-size: 0.5834rem;
-                @media (min-width: 1280px) {
+                @media (min-width: 1205px) {
                     font-size: 0.6875rem;
                 }
                 line-height: 156.5%;
@@ -280,16 +280,19 @@
 
     &__image {
 
-        padding-top: 88px;
+        padding-top: 68px;
+        @media (min-width: 705px) {
+            padding-top: 88px;
+        }
         max-width: 570px;
 
-        @media (min-width: 980px) {
+        @media (min-width: 893px) {
             padding-top: 0;
             max-width: 100%;
         }
 
         flex: 0 1 49%;
-        @media (min-width: 1440px) {
+        @media (min-width: 1365px) {
             flex: 0 1 45%;
         }
 
@@ -312,7 +315,7 @@
 
     &__price {
         margin-top: -20px;
-        @media (min-width: 980px) {
+        @media (min-width: 893px) {
             margin-top: -25px;
         }
 
@@ -322,19 +325,22 @@
 
         & strong {
             font-size: 3.2394rem;
-            @media (min-width: 550px) {
+            @media (min-width: 380px) {
                 font-size: 4.9413rem;
             }
-            @media (min-width: 700px) {
-                font-size: 4.9413rem;
+            @media (min-width: 555px) {
+                font-size: 5.5906rem;
             }
-            @media (min-width: 980px) {
+            @media (min-width: 705px) {
+                font-size: 5.5906rem;
+            }
+            @media (min-width: 893px) {
                 font-size: 3.77rem;
             }
-            @media (min-width: 1100px) {
+            @media (min-width: 985px) {
                 font-size: 4.3475rem;
             }
-            @media (min-width: 1280px) {
+            @media (min-width: 1205px) {
                 font-size: 4.8094rem;
             }
             line-height: 104.5%;

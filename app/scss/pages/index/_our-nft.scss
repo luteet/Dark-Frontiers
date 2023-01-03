@@ -3,6 +3,14 @@
     // .check-nft__container
 
     &__container {
+        &._min {
+            @media (min-width: 1205px) {
+                padding: 0 75px;
+            }
+            @media (min-width: 1285px) {
+                padding: 0 160px;
+            }
+        }
     }
 
     // .check-nft__header
@@ -16,10 +24,39 @@
         flex-direction: column;
         text-align: center;
 
-        @media (min-width: 700px) {
+        @media (min-width: 555px) {
             flex-direction: row;
             align-items: flex-end;
             text-align: left;
+            margin-top: 8px;
+        }
+
+        @media (min-width: 705px) {
+            margin-top: 20px;
+        }
+
+        @media (min-width: 893px) {
+            margin-top: 0px;
+        }
+        
+        @media (min-width: 985px) {
+            margin-top: 5px;
+        }
+
+        @media (min-width: 1105px) {
+            margin-top: 40px;
+        }
+
+        @media (min-width: 1205px) {
+            margin-top: 25px;
+        }
+
+        @media (min-width: 1285px) {
+            margin-top: 30px;
+        }
+
+        @media (min-width: 1365px) {
+            margin-top: 25px;
         }
     }
 
@@ -31,13 +68,19 @@
     // .check-nft__title
 
     &__title {
+        &._large {
+    
+            @media (min-width: 1205px) {
+                font-size: 4.5rem;
+            }
+        }
     }
 
     // .check-nft__link
 
     &__link {
         display: none;
-        @media (min-width: 700px) {
+        @media (min-width: 555px) {
             display: inline-block;
         }
     }
@@ -62,23 +105,32 @@
         @media (min-width: 400px) {
             padding-right: 500px;
         }
-        @media (min-width: 700px) {
-            padding: 44px 0 0 0;
+        @media (min-width: 380px) {
+            padding: 40px 10px 0 10px;
+        }
+        @media (min-width: 555px) {
+            padding: 57px 0 0 0;
             padding-right: 0px;
         }
-        @media (min-width: 888px) {
-            padding: 44px 0 0 0;
+        @media (min-width: 705px) {
+            padding: 57px 0 0 0;
         }
 
-        @media (min-width: 980px) {
+        @media (min-width: 893px) {
             padding: 61px 0 0 0;
         }
 
-        @media (min-width: 1100px) {
+        @media (min-width: 985px) {
             padding: 86px 0 0 0;
         }
 
-        @media (min-width: 1200px) {
+        @media (min-width: 1105px) {
+            padding: 125px 0 0 0;
+        }
+        @media (min-width: 1205px) {
+            padding: 110px 0 0 0;
+        }
+        @media (min-width: 1365px) {
             padding: 100px 0 0 0;
         }
         @media (min-width: 1600px) {
@@ -151,7 +203,7 @@
 
         padding-top: 75px; */
         
-        @media (min-width: 1100px) {
+        @media (min-width: 985px) {
             
             /* &.swiper-slide-active &--body::before, &.swiper-slide-duplicate-active &--body::before {
                 opacity: 0;
@@ -173,8 +225,6 @@
         //transition: padding-top .4s ease;
         user-select: none;
 
-        
-
         // .check-nft__slide--body
 
         &--body {
@@ -187,8 +237,22 @@
 
             text-align: center;
 
-            padding: 44px 15px 43px 15px;
-            @media (min-width: 889px) {
+            padding: 40px 15px 40px 15px;
+            @media (min-width: 380px) {
+                padding: 40px 15px 40px 15px;
+            }
+            @media (min-width: 555px) {
+                padding: 40px 15px 40px 15px;
+            }
+            @media (min-width: 705px) {
+                padding: 38px 25px 45px 25px;
+            }
+
+            @media (min-width: 893px) {
+                padding: 46px 25px 45px 25px;
+            }
+
+            @media (min-width: 1105px) {
                 padding: 46px 25px 66px 25px;
             }
 
@@ -213,9 +277,18 @@
         // .check-nft__slide--image
 
         &--image {
-            width: 100%; padding-top: 55%;
+            width: 100%; padding-top: 50%;
             position: relative;
             max-width: 500px;
+            @media (min-width: 380px) {
+                padding-top: 52%;
+            }
+            @media (min-width: 555px) {
+                padding-top: 61%;
+            }
+            @media (min-width: 705px) {
+                padding-top: 65%;
+            }
 
             margin-bottom: 25px;
 
@@ -232,10 +305,10 @@
         &--name {
             font-weight: 800;
             font-size: 1.6875rem;
-            @media (min-width: 700px) {
+            @media (min-width: 555px) {
                 font-size: 2.3125rem;
             }
-            @media (min-width: 1100px) {
+            @media (min-width: 985px) {
                 font-size: 2.625rem;
             }
             line-height: 104.5%;

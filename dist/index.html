@@ -64,17 +64,26 @@
 		</div>
 		<div class="intro__container container _min">
 			<div class="intro__info">
-				<h1 class="intro__title main-title anim-element anim-text" data-delay="0" data-index="2">
-					Exclusive NFT sale
+				<h1 class="intro__title main-title anim-element anim-text" data-delay="0.5" data-index="2" data-stagger="0.15" data-duration="1">
+					<span class="anim-text-line">
+						<span>
+							Exclusive
+						</span>
+					</span>
+					<span class="anim-text-line">
+						<span>
+							NFT sale	
+						</span>
+					</span>
 				</h1>
-				<div class="intro__text anim-element anim-text" data-delay="0.3" data-index="3">
+				<div class="intro__text anim-element anim-fade-top" data-delay="0.5" data-index="3">
 					Owning a **spacesuit** will let you get straight on the action!
 				</div>
-				<a href="#" class="intro__link btn anim-element anim-fade-top" data-delay="1" data-duration="0.5" data-index="4">
+				<a href="#" class="intro__link btn anim-element anim-fade-top" data-delay="0.7" data-index="4">
 					Join sale
 				</a>
 			</div>
-			<div class="intro__social anim-element anim-fade-in" data-delay="0.5" data-index="5">
+			<div class="intro__social anim-element anim-fade-in" data-delay="0.7" data-index="5">
 				<div class="social _column">
 					<ul class="social__list">
 						<li class="social__item">
@@ -109,31 +118,46 @@
 			</div>
 		</div>
 	</section>
-	<section class="dao-maker anim-section section-padding">
+	<section class="dao-maker anim-section section-padding" data-offset="200">
 		<div class="dao-maker__container container">
-			<div class="dao-maker__block">
-				<div class="dao-maker__block--bg anim-element anim-fade-in" data-index="1" data-delay="0.3">
-					<svg preserveAspectRatio="none" class="hide-on-mob" viewBox="0 0 1279 571" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<div class="dao-maker__block anim-element anim-fade-top" data-index="1">
+				<div class="dao-maker__block--bg">
+					<svg preserveAspectRatio="none" viewBox="0 0 1279 571" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M1279 62.1023C1279 26.2999 1248.76 -2.06137 1213.03 0.229304L58.0332 74.2793C25.3987 76.3716 0 103.451 0 136.152V508.5C0 542.742 27.7583 570.5 62 570.5H1217C1251.24 570.5 1279 542.742 1279 508.5V62.1023Z" fill="#131423"/>
 					</svg>
-					<svg preserveAspectRatio="none" class="visible-on-mob" viewBox="0 0 548 579" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<svg preserveAspectRatio="none" viewBox="0 0 819 569" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M819 62.5175C819 25.834 787.324 -2.82857 750.823 0.825993L55.8232 70.4109C24.132 73.5839 0 100.253 0 132.102V506.5C0 540.742 27.7584 568.5 62 568.5H757C791.242 568.5 819 540.742 819 506.5V62.5175Z" fill="#131423"/>
+					</svg>
+					<!-- <svg preserveAspectRatio="none" class="visible-on-mob" viewBox="0 0 548 579" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M548 62.2369C548 24.2486 514.147 -4.80662 476.598 0.953833L52.5985 66.0004C22.3411 70.6422 0 96.6721 0 127.283V517C0 551.242 27.7584 579 62 579H486C520.242 579 548 551.242 548 517V62.2369Z" fill="#131423"/>
+					</svg> -->
+					<!-- <svg preserveAspectRatio="none" viewBox="0 0 375 574" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M375 62.4384C375 22.7265 338.187 -6.7471 299.437 1.94011L48.4372 58.2107C20.1241 64.5581 0 89.6932 0 118.709V512C0 546.242 27.7583 574 62 574H313C347.242 574 375 546.242 375 512V62.4384Z" fill="#131423"/>
+					</svg> -->
+					<!-- <svg preserveAspectRatio="none" viewBox="0 0 819 569" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M819 62.5175C819 25.834 787.324 -2.82857 750.823 0.825993L55.8232 70.4109C24.132 73.5839 0 100.253 0 132.102V506.5C0 540.742 27.7583 568.5 62 568.5H757C791.242 568.5 819 540.742 819 506.5V62.5175Z" fill="#131423"/>
+					</svg> -->
+					<svg preserveAspectRatio="none" viewBox="0 0 640 566" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M640 62.4428C640 25.0761 607.192 -3.80008 570.127 0.944634L54.1274 66.9996C23.1819 70.961 0 97.2997 0 128.498V504C0 538.242 27.7583 566 62 566H578C612.242 566 640 538.242 640 504V62.4428Z" fill="#131423"/>
+					</svg>
+					<svg preserveAspectRatio="none" viewBox="0 0 375 574" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M375 62.4384C375 22.7265 338.187 -6.74711 299.437 1.94011L48.4372 58.2107C20.1241 64.5581 0 89.6932 0 118.709V512C0 546.242 27.7583 574 62 574H313C347.242 574 375 546.242 375 512V62.4384Z" fill="#131423"/>
 					</svg>
 				</div>
-				<div class="dao-maker__logo anim-element anim-fade-top" data-index="2">
+				<div class="dao-maker__logo">
 					<div class="dao-maker__logo--body">
 						<img src="img/index/dao-maker/logo.svg" width="390" height="390" loading="lazy" alt="" class="dao-maker__logo--img">
 					</div>
 				</div>
 				<div class="dao-maker__info">
 					<div class="dao-maker__info--body">
-						<h2 class="dao-maker__title section-title anim-element anim-text" data-index="3">
+						<h2 class="dao-maker__title section-title">
 							Support by DAO Maker
 						</h2>
-						<div class="dao-maker__text anim-element anim-text" data-index="4">
+						<div class="dao-maker__text">
 							Join platform for retail ventures to invest in startups and projects at an early stage
 						</div>
-						<div class="dao-maker__row anim-element anim-fade-top" data-index="5" data-delay="1">
+						<div class="dao-maker__row">
 							<a href="#" class="dao-maker__btn btn _min">
 								Open
 							</a>
@@ -152,62 +176,66 @@
 							</div>
 						</div>
 					</div>
-					
 				</div>
 			</div>
 		</div>
 	</section>
 	<section class="what-is section-padding anim-section">
-		<div class="what-is__decor-element anim-element anim-fade-in" data-index="1"></div>
-		<div class="what-is__decor-bg-element anim-element anim-fade-in">
-			<img src="img/index/what-is/bg.svg" data-index="1" alt="">
-		</div>
-		<div class="what-is__container container">
-			<div class="what-is__image">
-				<div class="what-is__image--body">
-					<div class="what-is__image--item">
-						<picture>
-							<source srcset="img/index/what-is/image-1.webp" type="image/webp">
-							<img src="img/index/what-is/image-1.png" class="anim-element anim-fade-top" data-index="2" data-mob-index="5" data-duration="1.2" width="300" height="548" loading="lazy" alt="">
-						</picture>
-					</div>
-					<div class="what-is__image--item">
-						<picture>
-							<source srcset="img/index/what-is/image-2.webp" type="image/webp">
-							<img src="img/index/what-is/image-2.png" class="anim-element anim-fade-top" data-index="4" data-mob-index="6" data-duration="1.4" width="300" height="548" loading="lazy" alt="">
-						</picture>
-					</div>
-					<div class="what-is__image--item">
-						<picture>
-							<source srcset="img/index/what-is/image-3.webp" type="image/webp">
-							<img src="img/index/what-is/image-3.png" class="anim-element anim-fade-top" data-index="3" data-mob-index="7" data-duration="1.3" width="300" height="548" loading="lazy" alt="">
-						</picture>
+		<div class="what-is__wrapper anim-element anim-fade-top" data-index="1">
+			<div class="what-is__decor-element"></div>
+			<div class="what-is__decor-bg-element">
+				<img src="img/index/what-is/bg.svg" alt="">
+			</div>
+			<div class="what-is__container container">
+				<div class="what-is__image">
+					<div class="what-is__image--body">
+						<div class="what-is__image--item">
+							<picture>
+								<source srcset="img/index/what-is/image-1.webp" type="image/webp">
+								<img src="img/index/what-is/image-1.png" width="300" height="548" loading="lazy" alt="">
+							</picture>
+						</div>
+						<div class="what-is__image--item">
+							<picture>
+								<source srcset="img/index/what-is/image-2.webp" type="image/webp">
+								<img src="img/index/what-is/image-2.png" width="300" height="548" loading="lazy" alt="">
+							</picture>
+						</div>
+						<div class="what-is__image--item">
+							<picture>
+								<source srcset="img/index/what-is/image-3.webp" type="image/webp">
+								<img src="img/index/what-is/image-3.png" width="300" height="548" loading="lazy" alt="">
+							</picture>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="what-is__info">
-				<div class="what-is__info--body">
-					<h2 class="what-is__title section-title _large anim-element anim-text" data-index="5" data-mob-index="2">
-						What is Dark /br Frontiers NFT
-					</h2>
-					<div class="what-is__text anim-element anim-text" data-index="6" data-mob-index="3" data-duration="0.5" data-delay="0.4" data-stagger="0.01">
-						Meet Dark Frontiers, a 3D art collection with an initial drop of 10,000 unique NFTs stored as ERC-721 tokens on the Ethereum blockchain and hosted on IPFS. 
-						/n /n
-						Owning a spacesuit will let you get straight on the action! Each suit will keep you alive for a limited amount of time, later - just recharge it!
+				<div class="what-is__info">
+					<div class="what-is__info--body">
+						<h2 class="what-is__title section-title _large">
+							What is Dark <br> Frontiers NFT
+						</h2>
+						<div class="what-is__text">
+							<p>
+								Meet Dark Frontiers, a 3D art collection with an initial drop of 10,000 unique NFTs stored as ERC-721 tokens on the Ethereum blockchain and hosted on IPFS. 
+							</p>
+							<p>
+								Owning a spacesuit will let you get straight on the action! Each suit will keep you alive for a limited amount of time, later - just recharge it!
+							</p>
+						</div>
+						<ul class="what-is__blockchain">
+							<li class="what-is__blockchain-item">
+								<div class="what-is__blockchain-item--body">
+									<div class="what-is__blockchain-item--logo">
+										<img src="img/icons/ethereum.svg" width="38" height="38" alt="Ethereum logo">
+									</div>
+									<div class="what-is__blockchain-item--info">
+										<span class="what-is__blockchain-item--legend">Blockchain</span>
+										<h3 class="what-is__blockchain-item--name">Ethereum</h3>
+									</div>
+								</div>
+							</li>
+						</ul>
 					</div>
-					<ul class="what-is__blockchain anim-element anim-fade-top" data-index="7" data-mob-index="4" data-delay="1">
-						<li class="what-is__blockchain-item">
-							<div class="what-is__blockchain-item--body">
-								<div class="what-is__blockchain-item--logo">
-									<img src="img/icons/ethereum.svg" width="38" height="38" alt="Ethereum logo">
-								</div>
-								<div class="what-is__blockchain-item--info">
-									<span class="what-is__blockchain-item--legend">Blockchain</span>
-									<h3 class="what-is__blockchain-item--name">Ethereum</h3>
-								</div>
-							</div>
-						</li>
-					</ul>
 				</div>
 			</div>
 		</div>
@@ -216,12 +244,12 @@
 		<div class="check-nft__container container _min">
 			<div class="check-nft__header">
 				<div class="check-nft__col">
-					<h2 class="check-nft__title section-title _large anim-element anim-text" data-index="1">
-						Check /br 
+					<h2 class="check-nft__title section-title _large">
+						Check <br>
 						our  NFT’s
 					</h2>
 				</div>
-				<div class="check-nft__col anim-element anim-fade-in" data-index="2" data-delay="0.7">
+				<div class="check-nft__col">
 					<a href="#" class="check-nft__link btn">
 						See all
 					</a>
@@ -338,83 +366,85 @@
 		</div>
 	</section>
 	<section class="nft-section section-padding anim-section">
-		<div class="nft-section__decor-element anim-element anim-fade-in" data-index="1"></div>
-		<div class="nft-section__decor-bg-element anim-element anim-fade-in">
-			<img src="img/index/NFT-section/lines.svg" data-index="1" alt="">
-		</div>
-		<div class="nft-section__container container _min">
-			<div class="nft-section__info">
-				<div class="nft-section__info--body">
-					<h2 class="nft-section__title section-title _large anim-element anim-text" data-index="4" data-mob-index="2">
-						Hybrid Bioship merging
-					</h2>
-					<div class="nft-section__text anim-element anim-text" data-index="5" data-mob-index="2" data-delay="0.4">
-						Play with limited-edition hybrid technology spaceships! Make new, more powerful spaceships by merging two NFTs. Each merge will burn the former NFTs and will create new forms and features of your ship.
-					</div>
-					<div class="nft-section__owner anim-element anim-fade-top" data-delay="1.2" data-index="6" data-mob-index="3">
-						<div class="nft-section__owner--body">
-							<div class="nft-section__owner--logo">
-								<picture>
-									<source srcset="img/index/NFT-section/logo.webp" type="image/webp">
-									<img src="img/index/NFT-section/logo.png" width="62" height="62" alt="">
-								</picture>
-							</div>
-							<h3 class="nft-section__owner--name">
-								DARK LP Staking Farm
-							</h3>
-							<div class="nft-section__owner--value">
-								<strong>55.633%</strong>
-								<span>Current APY</span>
+		<div class="nft-section__wrapper anim-element anim-fade-top" data-index="1">
+			<div class="nft-section__decor-element"></div>
+			<div class="nft-section__decor-bg-element">
+				<img src="img/index/NFT-section/lines.svg" alt="">
+			</div>
+			<div class="nft-section__container container _min">
+				<div class="nft-section__info">
+					<div class="nft-section__info--body">
+						<h2 class="nft-section__title section-title _large">
+							Hybrid Bioship merging
+						</h2>
+						<div class="nft-section__text">
+							Play with limited-edition hybrid technology spaceships! Make new, more powerful spaceships by merging two NFTs. Each merge will burn the former NFTs and will create new forms and features of your ship.
+						</div>
+						<div class="nft-section__owner">
+							<div class="nft-section__owner--body">
+								<div class="nft-section__owner--logo">
+									<picture>
+										<source srcset="img/index/NFT-section/logo.webp" type="image/webp">
+										<img src="img/index/NFT-section/logo.png" width="62" height="62" alt="">
+									</picture>
+								</div>
+								<h3 class="nft-section__owner--name">
+									DARK LP Staking Farm
+								</h3>
+								<div class="nft-section__owner--value">
+									<strong>55.633%</strong>
+									<span>Current APY</span>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="nft-section__image">
-				<div class="nft-section__image--item anim-element anim-zoom-bottom" data-index="2" data-mob-index="4" data-delay="0.2">
-					<picture>
-						<source srcset="img/index/NFT-section/image.webp" type="image/webp">
-						<img src="img/index/NFT-section/image.png" alt="" loading="lazy">
-					</picture>
-				</div>
-				<div class="nft-section__price anim-element anim-fade-top" data-index="3" data-mob-index="5" data-delay="0.6">
-					<strong>
-						$4029
-					</strong>
-					<span>
-						<img src="img/index/NFT-section/icon.svg" width="14" height="14" alt="">
-						Current price
-					</span>
+				<div class="nft-section__image">
+					<div class="nft-section__image--item">
+						<picture>
+							<source srcset="img/index/NFT-section/image.webp" type="image/webp">
+							<img src="img/index/NFT-section/image.png" alt="" loading="lazy">
+						</picture>
+					</div>
+					<div class="nft-section__price">
+						<strong>
+							$4029
+						</strong>
+						<span>
+							<img src="img/index/NFT-section/icon.svg" width="14" height="14" alt="">
+							Current price
+						</span>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section class="subscribe section-padding ">
+	<section class="subscribe section-padding">
 		<div class="subscribe__container container">
 			<div class="subscribe__block anim-section">
-				<div class="subscribe__block--body anim-element anim-fade-in" data-index="1">
+				<div class="subscribe__block--body anim-element anim-fade-top" data-index="1">
 					<div class="subscribe__bg">
 						<div class="subscribe__bg--element">
 							<picture>
 								<source srcset="img/index/subscribe/ThumbsUp.webp" type="image/webp">
-								<img src="img/index/subscribe/ThumbsUp.png" alt="" width="350" height="376" loading="lazy" class="anim-element anim-fade-right" data-index="2">
+								<img src="img/index/subscribe/ThumbsUp.png" alt="" width="350" height="376" loading="lazy">
 							</picture>
 						</div>
 						<div class="subscribe__bg--element">
 							<picture>
 								<source srcset="img/index/subscribe/rocket.webp" type="image/webp">
-								<img src="img/index/subscribe/rocket.png" alt="" width="250" height="250" loading="lazy" class="anim-element anim-fade-top" data-index="3" data-delay="0.2">
+								<img src="img/index/subscribe/rocket.png" alt="" width="250" height="250" loading="lazy">
 							</picture>
 						</div>
 					</div>
 					<div class="subscribe__inner">
-						<h2 class="subscribe__title section-title _super-large anim-element anim-text" data-index="4">
+						<h2 class="subscribe__title section-title _super-large">
 							SubscribE!
 						</h2>
-						<div class="subscribe__text anim-element anim-text" data-index="5">
+						<div class="subscribe__text">
 							Subscribe To Get Major News 🔥
 						</div>
-						<form action="#" class="subscribe__form anim-element anim-fade-top" data-index="6" data-delay="0.4">
+						<form action="#" class="subscribe__form">
 							<label class="subscribe__form--label">
 								<input type="email" name="email" placeholder="Your email" required class="subscribe__form--input">
 							</label>
@@ -422,44 +452,46 @@
 								Ok
 							</button>
 						</form>
-						<div class="subscribe__note anim-element anim-text" data-index="7">
+						<div class="subscribe__note">
 							We will use your email for major updates only.
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="subscribe__sponsors anim-section">
-				<ul class="subscribe__sponsors--list">
-					<li class="anim-element anim-fade-top" data-index="1">
-						<img src="img/index/subscribe/sponsors/logo-1.svg" alt="">
-					</li>
-					<li class="anim-element anim-fade-top" data-index="2" data-delay="0.2">
-						<img src="img/index/subscribe/sponsors/logo-2.svg" alt="">
-					</li>
-					<li class="anim-element anim-fade-top" data-index="3" data-delay="0.2">
-						<img src="img/index/subscribe/sponsors/logo-3.svg" alt="">
-					</li>
-					<li class="anim-element anim-fade-top" data-index="4" data-delay="0.2">
-						<img src="img/index/subscribe/sponsors/logo-4.svg" alt="">
-					</li>
-				</ul>
-				<div class="subscribe__sponsors--text anim-element anim-text" data-index="5" data-stagger="0.01">
-					Dark Frontiers project is incubated by Gamestarter Originals as a standalone play-to-earn game featuring NFTs. Dark Frontiers will feature $DARK token and utilise $GAME as a boost in all transactions. $DARK token has no other monetary value outside the game. No taxes are applicable to holders of $DARK coin. However, if a holder of $DARK token chooses to their coins for fiat or digital currency, they may be subjected to taxation, depending on jurisdiction of residence. Gamestarter or Dark Frontiers bears no responsibility for any taxation issues arising from surrendering of $DARK tokens on a secondary market. All rights reserved. www.darkfrontiers.com.
+				<div class="subscribe__sponsors--body anim-element anim-fade-top" data-index="1">
+					<ul class="subscribe__sponsors--list">
+						<li>
+							<img src="img/index/subscribe/sponsors/logo-1.svg" alt="">
+						</li>
+						<li>
+							<img src="img/index/subscribe/sponsors/logo-2.svg" alt="">
+						</li>
+						<li>
+							<img src="img/index/subscribe/sponsors/logo-3.svg" alt="">
+						</li>
+						<li>
+							<img src="img/index/subscribe/sponsors/logo-4.svg" alt="">
+						</li>
+					</ul>
+					<div class="subscribe__sponsors--text">
+						Dark Frontiers project is incubated by Gamestarter Originals as a standalone play-to-earn game featuring NFTs. Dark Frontiers will feature $DARK token and utilise $GAME as a boost in all transactions. $DARK token has no other monetary value outside the game. No taxes are applicable to holders of $DARK coin. However, if a holder of $DARK token chooses to their coins for fiat or digital currency, they may be subjected to taxation, depending on jurisdiction of residence. Gamestarter or Dark Frontiers bears no responsibility for any taxation issues arising from surrendering of $DARK tokens on a secondary market. All rights reserved. www.darkfrontiers.com.
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 </main>
 
-    <footer class="footer anim-section">
+    <footer class="footer">
         <div class="footer__container container _min">
             <div class="footer__row">
-                <div class="footer__row--col anim-element anim-fade-top" data-index="1">
+                <div class="footer__row--col">
                     <a href="#" class="footer__logo" aria-label="Logo">
                         <img src="img/logo.svg" width="143" height="45" loading="lazy" alt="" class="footer__logo--img">
                     </a>
                 </div>
-                <div class="footer__row--col anim-element anim-fade-top" data-index="2" data-delay="0.2">
+                <div class="footer__row--col">
                     <div class="footer__social">
                         <div class="social">
                             <ul class="social__list">
@@ -496,7 +528,7 @@
                 </div>
             </div>
             <div class="footer__row _column-on-table">
-                <div class="footer__row--col anim-element anim-fade-top" data-index="3" data-delay="0.2">
+                <div class="footer__row--col">
                     <form action="#" class="footer__subscribe">
                         <span class="footer__subscribe--legend">
                             Subscribe to newsletter
@@ -511,7 +543,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="footer__row--col anim-element anim-fade-top" data-index="4" data-delay="0.2">
+                <div class="footer__row--col">
                     <div class="footer__soon">
                         <div class="footer__soon--element">Lanching soon</div>
                         <div class="footer__soon--timer timer"
@@ -531,12 +563,12 @@
                 </div>
             </div>
             <div class="footer__row _reverse">
-                <div class="footer__row--col anim-element anim-fade-top" data-index="5" data-delay="0.2">
+                <div class="footer__row--col">
                     <span class="footer__copy">
                         © NFT Hunters Club 2022 — All rights reserved.
                     </span>
                 </div>
-                <div class="footer__row--col anim-element anim-fade-top" data-index="6" data-delay="0.2">
+                <div class="footer__row--col">
                     <nav class="footer__nav">
                         <ul class="footer__nav--list">
                             <li class="footer__nav--item">

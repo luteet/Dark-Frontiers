@@ -100,12 +100,12 @@ animSection.forEach(animSection => {
 
 	Array.from(animArray).forEach((animArrayElement, index) => {
 
-		const duration 	= (Number(animArrayElement['element'].dataset.duration)) ? Number(animArrayElement['element'].dataset.duration) : 1,
+		const duration 	= (Number(animArrayElement['element'].dataset.duration)) ? Number(animArrayElement['element'].dataset.duration) : 0.5,
 			  delay 	= (Number(animArrayElement['element'].dataset.delay)) ? Number(animArrayElement['element'].dataset.delay) : 0,
 			  stagger 	= (Number(animArrayElement['element'].dataset.stagger)) ? Number(animArrayElement['element'].dataset.stagger) : 0.05;
 		
 		if(animArrayElement['element'].classList.contains('anim-text')) {
-			let arrayText = animArrayElement['element'].textContent.split(" ");
+			/* let arrayText = animArrayElement['element'].textContent.split(" ");
 			animArrayElement['element'].innerHTML = '';
 			
 			for(let index = 0; index < arrayText.length; index++) {
@@ -121,7 +121,7 @@ animSection.forEach(animSection => {
 				}
 	
 				animArrayElement['element'].insertAdjacentHTML('beforeend', arrayText[index])
-			}
+			} */
 
 			tl.to(animArrayElement['element'], {
 				opacity: 1,
@@ -129,11 +129,11 @@ animSection.forEach(animSection => {
 				delay: delay,
 				onStart: function() {
 					
-					gsap.to(animArrayElement['element'].querySelectorAll('.anim-text-word'), {
+					gsap.to(animArrayElement['element'].querySelectorAll('.anim-text-line > span'), {
 						y: 0,
 						opacity: 1,
 						startAt: {
-							y: 50,
+							y: '100%',
 						},
 						duration: duration,
 						ease: "back.inOut(1.7)",
@@ -155,25 +155,14 @@ animSection.forEach(animSection => {
 			
 			tl.to(animArrayElement['element'], {
 				opacity: 1,
-				y: 0,
+				/* y: 0,
 				startAt: {
-					y: 50,
-				},
+					y: '25%',
+				}, */
 				duration: duration,
 				delay: delay,
-				onStart: function() {
-					
-					if(animArrayElement['element'].classList.contains('_has-slider')) {
-						if(checkNftSlider) {
-							checkNftSlider.slideNext(2500)
-						}
-
-						setTimeout(() => {
-							animArrayElement['element'].classList.add('_animated-slider');
-						},200)
-						
-					}
-					
+				onStart: function () {
+					animArrayElement['element'].classList.add('_animated');
 				}
 			}, (index == 0) ? false : "-=1");
 
@@ -229,6 +218,7 @@ animSection.forEach(animSection => {
 					start: 'top center',
 					end: 'bottom -100px',
 					scrub: true,
+					//ease: "power1.inOut"
 				}
 			})
 
@@ -253,9 +243,10 @@ function animScroll() {
 
 	Array.from(animSectionArray).forEach((animArrayElement, index) => {
 		const element = animArrayElement[0],
+			  offset = (Number(animArrayElement[0].dataset.offset)) ? Number(animArrayElement[0].dataset.offset) : 0;
 			  elementCoords = element.getBoundingClientRect();
-
-		if(window.innerHeight / 1.5 > elementCoords.top && !element.classList.contains('_animated')) {
+		
+		if(window.innerHeight / 1.5 - offset > elementCoords.top && !element.classList.contains('_animated')) {
 			element.classList.add('_animated')
 			animArrayElement[1].play();
 		}
@@ -266,12 +257,18 @@ animScroll();
 
 
 window.addEventListener('scroll', animScroll)
-
-gsap.to(header, {
-	opacity: 1,
+setTimeout(() => {
+	header.classList.add('_loaded')
+},0)
+/* gsap.to(header, {
+	//opacity: 1,
+	y: "0%",
 	duration: 1,
+	startAt: {
+		y: "-100%",
+	},
 	delay: 0.2
-})
+}) */
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </Animation> -=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -318,3 +315,42 @@ setInterval(() => {
 },1000)
 
 // =-=-=-=-=-=-=-=-=-=-=-=- </Timer> -=-=-=-=-=-=-=-=-=-=-=-=
+
+// anim-text
+/* let arrayText = animArrayElement['element'].textContent.split(" ");
+	animArrayElement['element'].innerHTML = '';
+	
+	for(let index = 0; index < arrayText.length; index++) {
+
+		if(arrayText[index].trim()[0] == '*' && arrayText[index].trim()[1] == '*') {
+			arrayText[index] = `<strong class="anim-text-word">${arrayText[index].trim().split('**').join('')} </strong>`;
+		} else if(arrayText[index].trim()[0] == '/' && arrayText[index].trim()[1] == 'n') {
+			arrayText[index] = `<div style="padding: 3px 0"></div>`;
+		} else if(arrayText[index].trim()[0] == '/' && arrayText[index].trim()[1] == 'b' && arrayText[index].trim()[2] == 'r') {
+			arrayText[index] = `</br>`;
+		} else {
+			arrayText[index] = `<span class="anim-text-word">${arrayText[index].trim()} </span>`;
+		}
+
+		animArrayElement['element'].insertAdjacentHTML('beforeend', arrayText[index])
+	}
+
+	tl.to(animArrayElement['element'], {
+		opacity: 1,
+		duration: duration,
+		delay: delay,
+		onStart: function() {
+			
+			gsap.to(animArrayElement['element'].querySelectorAll('.anim-text-word'), {
+				y: 0,
+				opacity: 1,
+				startAt: {
+					y: 50,
+				},
+				duration: duration,
+				ease: "back.inOut(1.7)",
+				stagger: stagger,
+				
+			})
+		}
+	}, (index == 0) ? false : "-=1") */
