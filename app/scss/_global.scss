@@ -231,6 +231,9 @@ body {
 .anim-fade-top {
     transform: translate3d(0,50px,0);
     transition: transform 1s ease;
+    &._fast {
+        transition: transform 0.5s ease;
+    }
     &._animated {
         transform: translate3d(0,0,0);
     }
