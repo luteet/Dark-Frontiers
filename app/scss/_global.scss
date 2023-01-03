@@ -229,7 +229,7 @@ body {
 }
 
 .anim-fade-top {
-    transform: translate3d(0,25%,0);
+    transform: translate3d(0,50px,0);
     transition: transform 1s ease;
     &._animated {
         transform: translate3d(0,0,0);
@@ -242,7 +242,9 @@ body {
 
     & > span {
         display: inline-block;
-        opacity: 0;
+        transform: translate(0,100%);
+        white-space: nowrap;
+        //opacity: 0;
     }
 }
 

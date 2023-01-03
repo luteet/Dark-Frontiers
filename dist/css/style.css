@@ -2,7 +2,7 @@ body,html {
     -webkit-text-size-adjust: 100%
 }
 
-button,hr,input {
+.swiper-cube,.swiper-flip,button,hr,input {
     overflow: visible
 }
 
@@ -16,6 +16,16 @@ progress,sub,sup {
 
 .swiper,ul li {
     list-style: none
+}
+
+.dao-maker__text,.dao-maker__title,.intro__bg,.intro__info,.swiper-pagination,.swiper-zoom-container,.txt-center,.what-is__image--item:nth-child(2) {
+    text-align: center
+}
+
+.bg-img,.intro__bg--img {
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none
 }
 
 * {
@@ -250,10 +260,6 @@ summary {
     box-sizing: content-box
 }
 
-.swiper-button-lock,.swiper-pagination-lock,.swiper-scrollbar-lock {
-    display: none
-}
-
 .swiper-android .swiper-slide,.swiper-wrapper {
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0)
@@ -473,9 +479,12 @@ summary {
     content: "next"
 }
 
+.swiper-button-lock {
+    display: none
+}
+
 .swiper-pagination {
     position: absolute;
-    text-align: center;
     transition: .3s opacity;
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
@@ -499,10 +508,6 @@ summary {
 .swiper-pagination-bullets-dynamic {
     overflow: hidden;
     font-size: 0
-}
-
-.swiper-cube,.swiper-flip {
-    overflow: visible
 }
 
 .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
@@ -656,6 +661,10 @@ button.swiper-pagination-bullet {
     top: 0
 }
 
+.swiper-pagination-lock {
+    display: none
+}
+
 .swiper-scrollbar {
     border-radius: 10px;
     position: relative;
@@ -695,13 +704,16 @@ button.swiper-pagination-bullet {
     top: 0
 }
 
+.swiper-scrollbar-lock {
+    display: none
+}
+
 .swiper-zoom-container {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center
+    align-items: center
 }
 
 .swiper-zoom-container>canvas,.swiper-zoom-container>img,.swiper-zoom-container>svg {
@@ -926,11 +938,6 @@ body {
     background: var(--dark)
 }
 
-.main-title,.section-title {
-    font-family: var(--title-font);
-    letter-spacing: -.04em
-}
-
 body._active,body._popup-active {
     overflow: hidden
 }
@@ -965,9 +972,6 @@ body._active,body._popup-active {
     top: 0;
     width: 100%;
     height: 100%;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     -o-object-fit: cover;
     object-fit: cover;
@@ -1054,8 +1058,8 @@ body._active,body._popup-active {
 }
 
 .anim-fade-top {
-    -webkit-transform: translate3d(0,25%,0);
-    transform: translate3d(0,25%,0);
+    -webkit-transform: translate3d(0,50px,0);
+    transform: translate3d(0,50px,0);
     transition: -webkit-transform 1s ease;
     transition: transform 1s ease;
     transition: transform 1s ease,-webkit-transform 1s ease
@@ -1073,7 +1077,9 @@ body._active,body._popup-active {
 
 .anim-text-line>span {
     display: inline-block;
-    opacity: 0
+    -webkit-transform: translate(0,100%);
+    transform: translate(0,100%);
+    white-space: nowrap
 }
 
 .anim-element {
@@ -1085,9 +1091,11 @@ body._active,body._popup-active {
 }
 
 .main-title {
+    font-family: var(--title-font);
     font-weight: 800;
     font-size: 4rem;
     line-height: 96%;
+    letter-spacing: -.04em;
     margin: 0
 }
 
@@ -1096,16 +1104,14 @@ body._active,body._popup-active {
 }
 
 .section-title {
+    font-family: var(--title-font);
     font-weight: 800;
-    line-height: 104.5%
+    line-height: 104.5%;
+    letter-spacing: -.04em
 }
 
-.nft-section__title._large,.section-title._super-large {
+.section-title._super-large {
     font-size: 3.375rem
-}
-
-.txt-center {
-    text-align: center
 }
 
 .header {
@@ -1115,9 +1121,9 @@ body._active,body._popup-active {
     top: 0;
     z-index: 100;
     width: 100%;
-    transition: opacity .2s ease-in-out,-webkit-transform .5s ease-in-out;
-    transition: opacity .2s ease-in-out,transform .5s ease-in-out;
-    transition: opacity .2s ease-in-out,transform .5s ease-in-out,-webkit-transform .5s ease-in-out;
+    transition: opacity 1s ease-in-out,-webkit-transform 1s ease-in-out;
+    transition: opacity 1s ease-in-out,transform 1s ease-in-out;
+    transition: opacity 1s ease-in-out,transform 1s ease-in-out,-webkit-transform 1s ease-in-out;
     -webkit-transform: translate3d(0,-100%,0);
     transform: translate3d(0,-100%,0);
     opacity: 0
@@ -1246,7 +1252,7 @@ body._active,body._popup-active {
     left: 0;
     height: 100%;
     z-index: -1;
-    text-align: center
+    pointer-events: none
 }
 
 .intro__bg::after {
@@ -1263,7 +1269,8 @@ body._active,body._popup-active {
     object-position: center top;
     left: 50%;
     -webkit-transform: translate(-50%,0);
-    transform: translate(-50%,0)
+    transform: translate(-50%,0);
+    user-select: none
 }
 
 .intro__container {
@@ -1274,7 +1281,6 @@ body._active,body._popup-active {
 
 .intro__info {
     width: 100%;
-    text-align: center;
     max-width: 400px
 }
 
@@ -1383,16 +1389,11 @@ body._active,body._popup-active {
     align-items: center
 }
 
-.dao-maker__title {
-    text-align: center
-}
-
 .dao-maker__text {
     font-size: 1rem;
     max-width: 300px;
     line-height: 156.5%;
-    padding-top: 10px;
-    text-align: center
+    padding-top: 10px
 }
 
 .dao-maker__row {
@@ -1444,6 +1445,10 @@ body._active,body._popup-active {
 
 .what-is__decor-bg-element {
     pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     z-index: -1;
     position: absolute;
     left: 0;
@@ -1488,21 +1493,20 @@ body._active,body._popup-active {
     width: 100%
 }
 
+.what-is__image--item:nth-child(1) img,.what-is__image--item:nth-child(3) img {
+    width: 34%;
+    height: auto
+}
+
 .what-is__image--item:nth-child(1) {
     left: .5%;
     top: 3%;
     opacity: .46
 }
 
-.what-is__image--item:nth-child(1) img {
-    width: 34%;
-    height: auto
-}
-
 .what-is__image--item:nth-child(2) {
     left: 0;
-    top: 2%;
-    text-align: center
+    top: 2%
 }
 
 .what-is__image--item:nth-child(2) img {
@@ -1516,11 +1520,6 @@ body._active,body._popup-active {
     top: 3%;
     width: 100%;
     opacity: .46
-}
-
-.what-is__image--item:nth-child(3) img {
-    width: 34%;
-    height: auto
 }
 
 .what-is__info {
@@ -1569,9 +1568,9 @@ body._active,body._popup-active {
     margin-right: 11px
 }
 
-.check-nft__slide--body,.what-is__blockchain-item--info {
-    flex-direction: column;
-    display: flex
+.what-is__blockchain-item--info {
+    display: flex;
+    flex-direction: column
 }
 
 .what-is__blockchain-item--legend {
@@ -1622,6 +1621,11 @@ body._active,body._popup-active {
     z-index: 3
 }
 
+.footer__nav--link,.nft-section__image--item {
+    z-index: 2;
+    position: relative
+}
+
 .check-nft__slider::before {
     left: -10px;
     background: linear-gradient(90deg,#090A1A 0,rgba(9,10,26,0) 100%)
@@ -1655,6 +1659,8 @@ body._active,body._popup-active {
 }
 
 .check-nft__slide--body {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     background: #131423;
     border-radius: 52px;
@@ -1732,6 +1738,10 @@ body._active,body._popup-active {
     height: 745px;
     border-radius: 50%;
     pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     -webkit-transform: translate(-65%,-50%);
     transform: translate(-65%,-50%);
     top: 50%;
@@ -1740,6 +1750,10 @@ body._active,body._popup-active {
 
 .nft-section__decor-bg-element {
     pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     z-index: -1;
     position: absolute;
     right: 0;
@@ -1772,6 +1786,10 @@ body._active,body._popup-active {
 
 .nft-section__info--body {
     max-width: 580px
+}
+
+.nft-section__title._large {
+    font-size: 3.375rem
 }
 
 .nft-section__text {
@@ -1845,11 +1863,6 @@ body._active,body._popup-active {
     text-align: center
 }
 
-.nft-section__image--item {
-    position: relative;
-    z-index: 2
-}
-
 .nft-section__image--item img {
     width: 100%
 }
@@ -1917,7 +1930,11 @@ body._active,body._popup-active {
 
 .subscribe__bg--element:nth-child(1) img {
     width: 300px;
-    height: auto
+    height: auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
 }
 
 .subscribe__bg--element:nth-child(2) {
@@ -1928,6 +1945,10 @@ body._active,body._popup-active {
 }
 
 .subscribe__bg--element:nth-child(2) img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     width: 150px;
     height: auto
 }
@@ -2254,9 +2275,7 @@ body._active,body._popup-active {
     padding: 7.5px 25px;
     font-size: 1rem;
     line-height: 144%;
-    color: #fff;
-    position: relative;
-    z-index: 2
+    color: #fff
 }
 
 .footer__nav--link::before {

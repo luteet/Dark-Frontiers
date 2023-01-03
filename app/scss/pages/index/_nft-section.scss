@@ -43,6 +43,7 @@
         width: 745px; height: 745px;
         border-radius: 50%;
         pointer-events: none;
+        user-select: none;
 
         transform: translate(-65%,-50%);
         top: 50%;
@@ -64,6 +65,7 @@
 
     &__decor-bg-element {
         pointer-events: none;
+        user-select: none;
         z-index: -1;
         position: absolute;
         right: 0; top: 75%;

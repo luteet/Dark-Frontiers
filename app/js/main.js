@@ -97,6 +97,7 @@ animSection.forEach(animSection => {
 
 	let tl = new TimelineMax();
 	tl.pause();
+	
 
 	Array.from(animArray).forEach((animArrayElement, index) => {
 
@@ -136,7 +137,7 @@ animSection.forEach(animSection => {
 							y: '100%',
 						},
 						duration: duration,
-						ease: "back.inOut(1.7)",
+						//ease: "back.inOut(1.7)",
 						stagger: stagger,
 						
 					})
@@ -234,10 +235,20 @@ animSection.forEach(animSection => {
 		
 	})
 
+	
+
 	animSection.style.opacity = 1;
 	animSectionArray.push([animSection, tl]);
 
+	
+
 })
+
+/* gsap.timeline({
+	onUpdate: function (param) {
+		console.log('end')
+	}
+}) */
 
 function animScroll() {
 
