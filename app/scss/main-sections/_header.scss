@@ -71,7 +71,7 @@
             }
 
             background: rgba(255, 255, 255, 0.07);
-            //backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
 
             border-radius: 69px;
 
@@ -95,6 +95,15 @@
 
                 transform: translate(5px,-9px);
             }
+
+            transition: background .2s ease-in-out;
+            &:hover {
+                background: var(--accent);
+            }
+            
+            &:active {
+                background: var(--accent-dark);
+            }
         }
 
         // .header__nav--link
@@ -111,17 +120,26 @@
             display: block;
             padding: 5px 10px;
 
-            transition: color .2s ease-in-out;
-
             position: relative;
-            color: #FFFFFF;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 50%; bottom: 0;
+                z-index: -1;
+                transform: translate(-50%,-9px);
+                width: 0%; height: 5px;
+                background: var(--accent);
 
-            transition: text-shadow .4s ease;
-            &:hover {
-                text-shadow: rgba(255, 255, 255, 0.493) 0px 0px 5px, rgba(255, 255, 255, 0.493) 0px 0px 10px, rgba(255, 255, 255, 0.493) 0px 0px 15px, rgba(0, 72, 255, 0.425) 0px 0px 20px, rgba(0, 72, 255, 0.425) 0px 0px 30px, rgba(0, 72, 255, 0.425) 0px 0px 40px, rgba(0, 72, 255, 0.425) 0px 0px 50px, rgba(0, 72, 255, 0.425) 0px 0px 75px;                
+                transition: width .3s ease-in-out, background .3s ease-in-out;
             }
-            &:active {
-                text-shadow: rgba(255, 255, 255, 0.2) 0px 0px 5px, rgba(255, 255, 255, 0.2) 0px 0px 10px, rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(0, 72, 255, 0.425) 0px 0px 20px, rgba(0, 72, 255, 0.425) 0px 0px 30px, rgba(0, 72, 255, 0.425) 0px 0px 40px, rgba(0, 72, 255, 0.425) 0px 0px 50px, rgba(0, 72, 255, 0.425) 0px 0px 75px;                
+
+            &:hover::before {
+                width: calc(100% - 20px);
+            }
+            
+            &:active::before {
+                width: calc(90% - 20px);
+                background: var(--accent-dark);
             }
         }
     }

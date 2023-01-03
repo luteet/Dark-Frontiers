@@ -2,7 +2,7 @@ body,html {
     -webkit-text-size-adjust: 100%
 }
 
-.swiper-cube,.swiper-flip,button,hr,input {
+button,hr,input {
     overflow: visible
 }
 
@@ -10,17 +10,12 @@ progress,sub,sup {
     vertical-align: baseline
 }
 
-*,:after,:before,[type=checkbox],[type=radio],legend {
+*,.swiper-lazy-preloader,:after,:before,[type=checkbox],[type=radio],legend {
     box-sizing: border-box
 }
 
 .swiper,ul li {
     list-style: none
-}
-
-.bg-img,.check-nft__slide {
-    -webkit-user-select: none;
-    -ms-user-select: none
 }
 
 * {
@@ -255,6 +250,10 @@ summary {
     box-sizing: content-box
 }
 
+.swiper-button-lock,.swiper-pagination-lock,.swiper-scrollbar-lock {
+    display: none
+}
+
 .swiper-android .swiper-slide,.swiper-wrapper {
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0)
@@ -474,10 +473,6 @@ summary {
     content: "next"
 }
 
-.swiper-button-lock {
-    display: none
-}
-
 .swiper-pagination {
     position: absolute;
     text-align: center;
@@ -504,6 +499,10 @@ summary {
 .swiper-pagination-bullets-dynamic {
     overflow: hidden;
     font-size: 0
+}
+
+.swiper-cube,.swiper-flip {
+    overflow: visible
 }
 
 .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
@@ -657,10 +656,6 @@ button.swiper-pagination-bullet {
     top: 0
 }
 
-.swiper-pagination-lock {
-    display: none
-}
-
 .swiper-scrollbar {
     border-radius: 10px;
     position: relative;
@@ -700,10 +695,6 @@ button.swiper-pagination-bullet {
     top: 0
 }
 
-.swiper-scrollbar-lock {
-    display: none
-}
-
 .swiper-zoom-container {
     width: 100%;
     height: 100%;
@@ -731,7 +722,6 @@ button.swiper-pagination-bullet {
     z-index: 10;
     -webkit-transform-origin: 50%;
     transform-origin: 50%;
-    box-sizing: border-box;
     border: 4px solid;
     border-radius: 50%;
     border-top-color: transparent
@@ -975,7 +965,9 @@ body._active,body._popup-active {
     top: 0;
     width: 100%;
     height: 100%;
+    -webkit-user-select: none;
     -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     -o-object-fit: cover;
     object-fit: cover;
@@ -1019,11 +1011,6 @@ body._active,body._popup-active {
 .social._column .social__list {
     flex-direction: column;
     flex-wrap: nowrap
-}
-
-.header__nav--btn,.header__nav--list,.intro__container {
-    align-items: center;
-    display: flex
 }
 
 .social__item {
@@ -1113,7 +1100,7 @@ body._active,body._popup-active {
     line-height: 104.5%
 }
 
-.section-title._super-large {
+.nft-section__title._large,.section-title._super-large {
     font-size: 3.375rem
 }
 
@@ -1143,6 +1130,8 @@ body._active,body._popup-active {
 }
 
 .header__nav--list {
+    display: flex;
+    align-items: center;
     flex-wrap: wrap;
     margin: -5px -15px
 }
@@ -1160,10 +1149,15 @@ body._active,body._popup-active {
     font-size: .875rem;
     line-height: 144%;
     color: #fff;
+    display: flex;
+    align-items: center;
     padding: 18px 22px;
     background: rgba(255,255,255,.07);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     border-radius: 69px;
-    position: relative
+    position: relative;
+    transition: background .2s ease-in-out
 }
 
 .header__nav--btn img {
@@ -1187,23 +1181,48 @@ body._active,body._popup-active {
     transform: translate(5px,-9px)
 }
 
+.check-nft__slide--body::before,.check-nft__slider::after,.check-nft__slider::before,.footer__nav--link::before,.header__nav--link::before,.intro__bg::after {
+    content: ""
+}
+
+.header__nav--btn:hover {
+    background: var(--accent)
+}
+
+.header__nav--btn:active {
+    background: var(--accent-dark)
+}
+
 .header__nav--link {
     font-weight: 800;
     font-size: 1rem;
     line-height: 144%;
+    color: #fff;
     display: block;
     padding: 5px 10px;
-    position: relative;
-    color: #fff;
-    transition: text-shadow .4s ease
+    position: relative
 }
 
-.header__nav--link:hover {
-    text-shadow: rgba(255,255,255,.493) 0 0 5px,rgba(255,255,255,.493) 0 0 10px,rgba(255,255,255,.493) 0 0 15px,rgba(0,72,255,.425) 0 0 20px,rgba(0,72,255,.425) 0 0 30px,rgba(0,72,255,.425) 0 0 40px,rgba(0,72,255,.425) 0 0 50px,rgba(0,72,255,.425) 0 0 75px
+.header__nav--link::before {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: -1;
+    -webkit-transform: translate(-50%,-9px);
+    transform: translate(-50%,-9px);
+    width: 0%;
+    height: 5px;
+    background: var(--accent);
+    transition: width .3s ease-in-out,background .3s ease-in-out
 }
 
-.header__nav--link:active {
-    text-shadow: rgba(255,255,255,.2) 0 0 5px,rgba(255,255,255,.2) 0 0 10px,rgba(255,255,255,.2) 0 0 15px,rgba(0,72,255,.425) 0 0 20px,rgba(0,72,255,.425) 0 0 30px,rgba(0,72,255,.425) 0 0 40px,rgba(0,72,255,.425) 0 0 50px,rgba(0,72,255,.425) 0 0 75px
+.header__nav--link:hover::before {
+    width: calc(100% - 20px)
+}
+
+.header__nav--link:active::before {
+    width: calc(90% - 20px);
+    background: var(--accent-dark)
 }
 
 .header__logo--img {
@@ -1231,7 +1250,6 @@ body._active,body._popup-active {
 }
 
 .intro__bg::after {
-    content: "";
     left: 0;
     height: calc(100% + 1px);
     background: linear-gradient(180.03deg,rgba(9,10,26,.51) 8.23%,#090A1A 99.98%)
@@ -1248,11 +1266,9 @@ body._active,body._popup-active {
     transform: translate(-50%,0)
 }
 
-.dao-maker__block,.dao-maker__logo,.what-is {
-    position: relative
-}
-
 .intro__container {
+    display: flex;
+    align-items: center;
     justify-content: center
 }
 
@@ -1289,6 +1305,7 @@ body._active,body._popup-active {
 }
 
 .dao-maker__block {
+    position: relative;
     display: -ms-grid;
     display: grid;
     overflow: hidden;
@@ -1330,6 +1347,7 @@ body._active,body._popup-active {
 .dao-maker__logo {
     width: 90%;
     aspect-ratio: 1/1;
+    position: relative;
     z-index: -1
 }
 
@@ -1406,6 +1424,10 @@ body._active,body._popup-active {
     color: rgba(255,255,255,.39)
 }
 
+.what-is {
+    position: relative
+}
+
 .what-is__decor-element {
     position: absolute;
     right: 0;
@@ -1466,15 +1488,15 @@ body._active,body._popup-active {
     width: 100%
 }
 
-.what-is__image--item:nth-child(1) img,.what-is__image--item:nth-child(3) img {
-    width: 34%;
-    height: auto
-}
-
 .what-is__image--item:nth-child(1) {
     left: .5%;
     top: 3%;
     opacity: .46
+}
+
+.what-is__image--item:nth-child(1) img {
+    width: 34%;
+    height: auto
 }
 
 .what-is__image--item:nth-child(2) {
@@ -1494,6 +1516,11 @@ body._active,body._popup-active {
     top: 3%;
     width: 100%;
     opacity: .46
+}
+
+.what-is__image--item:nth-child(3) img {
+    width: 34%;
+    height: auto
 }
 
 .what-is__info {
@@ -1542,9 +1569,9 @@ body._active,body._popup-active {
     margin-right: 11px
 }
 
-.what-is__blockchain-item--info {
-    display: flex;
-    flex-direction: column
+.check-nft__slide--body,.what-is__blockchain-item--info {
+    flex-direction: column;
+    display: flex
 }
 
 .what-is__blockchain-item--legend {
@@ -1587,7 +1614,6 @@ body._active,body._popup-active {
 }
 
 .check-nft__slider::after,.check-nft__slider::before {
-    content: "";
     position: absolute;
     top: 0;
     width: 25%;
@@ -1618,7 +1644,9 @@ body._active,body._popup-active {
 }
 
 .check-nft__slide {
+    -webkit-user-select: none;
     -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none
 }
 
@@ -1627,8 +1655,6 @@ body._active,body._popup-active {
 }
 
 .check-nft__slide--body {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     background: #131423;
     border-radius: 52px;
@@ -1639,7 +1665,6 @@ body._active,body._popup-active {
 }
 
 .check-nft__slide--body::before {
-    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -1747,10 +1772,6 @@ body._active,body._popup-active {
 
 .nft-section__info--body {
     max-width: 580px
-}
-
-.nft-section__title._large {
-    font-size: 3.375rem
 }
 
 .nft-section__text {
@@ -2234,11 +2255,11 @@ body._active,body._popup-active {
     font-size: 1rem;
     line-height: 144%;
     color: #fff;
-    position: relative
+    position: relative;
+    z-index: 2
 }
 
 .footer__nav--link::before {
-    content: "";
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -2248,7 +2269,7 @@ body._active,body._popup-active {
     width: 0%;
     height: 5px;
     background: var(--accent);
-    transition: width .3s ease
+    transition: width .3s ease-in-out,background .3s ease-in-out
 }
 
 .footer__nav--link:hover::before {
@@ -2256,7 +2277,8 @@ body._active,body._popup-active {
 }
 
 .footer__nav--link:active::before {
-    width: calc(80% - 50px)
+    width: calc(90% - 50px);
+    background: var(--accent-dark)
 }
 
 @media (min-width:380px) {
@@ -3392,7 +3414,7 @@ body._active,body._popup-active {
     }
 
     .footer__nav--link:active::before {
-        width: calc(80% - 60px)
+        width: calc(90% - 60px)
     }
 }
 
