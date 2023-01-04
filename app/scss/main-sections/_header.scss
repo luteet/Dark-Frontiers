@@ -44,9 +44,17 @@
             padding: 5px 15px;
             &._auto {
                 flex: 1 1 auto;
-                @media (min-width: 1105px) {
+
+                @media (min-width: 1200px) {
                     text-align: center;
                     padding-left: 130px;
+                    
+                }
+            }
+
+            &._hide-on-mob {
+                @media (max-width: 768px) {
+                    display: none;
                 }
             }
         }

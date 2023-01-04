@@ -4,52 +4,33 @@ const body = document.querySelector('body'),
 	html = document.querySelector('html'),
 	header = document.querySelector('.header');
 
-// =-=-=-=-=-=-=-=-=-=-=-=- <slider> -=-=-=-=-=-=-=-=-=-=-=-=
 
-let checkNftSlider/*  = new Swiper('.check-nft__slider', {
+body.addEventListener('click', function (event) {
 
-	spaceBetween: 32,
-	slidesPerView: 1,
-	centeredSlides: true,
-	speed: 500,
-	allowTouchMove: false,
-
-	autoplay: {
-		delay: 0,
-		disableOnInteraction: false,
-		pauseOnMouseEnter: true,
-	},
-
-	//enabled: false,
-
-	//noSwiping: true,
-
-	loop: true,
-	loopAdditionalSlides: 2,
-	//freeMode: true,
-	
-	breakpoints: {
-		550: {
-			slidesPerView: 2,
-		},
-		889: {
-			slidesPerView: 2,
-			spaceBetween: 52,
-		},
-		1100: {
-			slidesPerView: 3,
-			spaceBetween: 52,
-		},
-		1441: {
-			slidesPerView: 4,
-			spaceBetween: 52,
-		},
+	function $(elem) {
+	  return event.target.closest(elem)
 	}
-}); */
 
-//checkNftSlider.slidePrev(0)
+	// =-=-=-=-=-=-=-=-=-=- <Скролл при нажатии на кнопку> -=-=-=-=-=-=-=-=-=-=-
 
-// =-=-=-=-=-=-=-=-=-=-=-=- </slider> -=-=-=-=-=-=-=-=-=-=-=-=
+	let btnToScroll = $('.btn-to-scroll');
+	if(btnToScroll) {
+		event.preventDefault();
+		let section;
+	
+		section = document.querySelector(btnToScroll.getAttribute('href'))
+	
+		window.scroll({
+			left: 0,
+			top: (section) ? section.offsetTop : 0,
+			behavior: 'smooth'
+		})
+	
+	}
+
+	// =-=-=-=-=-=-=-=-=-=- </Скролл при нажатии на кнопку> -=-=-=-=-=-=-=-=-=-=-
+
+})
 
 // =-=-=-=-=-=-=-=-=-=-=-=- <resize> -=-=-=-=-=-=-=-=-=-=-=-=
 
@@ -106,23 +87,6 @@ animSection.forEach(animSection => {
 			  stagger 	= (Number(animArrayElement['element'].dataset.stagger)) ? Number(animArrayElement['element'].dataset.stagger) : 0.05;
 		
 		if(animArrayElement['element'].classList.contains('anim-text')) {
-			/* let arrayText = animArrayElement['element'].textContent.split(" ");
-			animArrayElement['element'].innerHTML = '';
-			
-			for(let index = 0; index < arrayText.length; index++) {
-
-				if(arrayText[index].trim()[0] == '*' && arrayText[index].trim()[1] == '*') {
-					arrayText[index] = `<strong class="anim-text-word">${arrayText[index].trim().split('**').join('')} </strong>`;
-				} else if(arrayText[index].trim()[0] == '/' && arrayText[index].trim()[1] == 'n') {
-					arrayText[index] = `<div style="padding: 3px 0"></div>`;
-				} else if(arrayText[index].trim()[0] == '/' && arrayText[index].trim()[1] == 'b' && arrayText[index].trim()[2] == 'r') {
-					arrayText[index] = `</br>`;
-				} else {
-					arrayText[index] = `<span class="anim-text-word">${arrayText[index].trim()} </span>`;
-				}
-	
-				animArrayElement['element'].insertAdjacentHTML('beforeend', arrayText[index])
-			} */
 
 			tl.to(animArrayElement['element'], {
 				opacity: 1,

@@ -51,10 +51,9 @@ function images() {
 
 function scriptsLib() {
     return src([
-        'node_modules/swiper/swiper-bundle.min.js', // Слайдер
         'node_modules/gsap/dist/gsap.min.js', // Анимации
         'node_modules/gsap/dist/ScrollTrigger.min.js', // Анимации
-        
+        'node_modules/smoothscroll-polyfill/dist/smoothscroll.min.js', // Полифил для window.scroll()
     ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
@@ -126,7 +125,6 @@ function stylesOriginal() {
 function stylesLib() {
     return src([
         'node_modules/normalize.css/normalize.css',
-        'node_modules/swiper/swiper-bundle.min.css', // Слайдер
     ])
     .pipe(concat('_libs.scss'))
     .pipe(dest('app/scss'))
